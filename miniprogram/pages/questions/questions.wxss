@@ -1,1 +1,16 @@
 /* miniprogram/pages/questions.wxss */
+
+.group {
+  display: block;
+  
+  width: 100%;
+}
+.questions {
+  display: block;
+  
+}
+.options{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
