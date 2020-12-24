@@ -1,0 +1,14 @@
+
+<view class="container">
+  <view wx:key="_id" wx:for="{{questions}}"> {{item.desc}} 
+    <radio-group bindchange="radioChange">
+        <label class="weui-cell weui-check__label" wx:for="{{item.answers}}" wx:key="_id">
+          <view class="weui-cell__hd">
+            <radio value="{{item._id}}"/>
+          </view>
+          <view class="weui-cell__bd">{{item.desc}}</view>
+        </label>
+    </radio-group>
+    
+  </view>
+</view>

@@ -1,26 +1,42 @@
-// miniprogram/pages/first/first.js
+// miniprogram/pages/questions.js
 Page({
 
   /**
    * Page initial data
    */
   data: {
-
-  },
-
-  goToPage: function() {
-    const url = "/pages/questions/questions" 
- 
-    wx.navigateTo({
-      url: url,
-    })
+    questions: []
   },
 
   /**
    * Lifecycle function--Called when page load
    */
   onLoad: function (options) {
+    wx.cloud.callFunction({
+      name: 'questions',
+      data: {},
+      success: res => {
+        const data = JSON.parse(res.result)
+        console.info(data)
+        this.setData({
+          questions: data.list
+        })
+      },
+      fail: err => {
+        console.error('[云函数] [login] 调用失败', err)
 
+      }
+    })
+    // const db = wx.cloud.database({env: 'test-3glvzxwge4dbbb17'})
+    // db.collection('questions').aggregate()
+    //   .lookup({
+    //     from: 'answers',
+    //     localField: '_id',
+    //     foreignField: 'question_id',
+    //     as: 'answers'
+    //   }).end()
+    //   .then(res => console.log(res.data))
+    //   .catch(err => console.error(err))
   },
 
   /**
