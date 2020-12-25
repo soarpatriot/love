@@ -1,14 +1,19 @@
 
-<view class="container">
-  <view class="questions" wx:key="_id" wx:for="{{questions}}"> {{item.desc}} 
-    <radio-group class="group" bindchange="radioChange">
-        <label class="options" wx:for="{{item.answers}}" wx:key="_id">
-          <view class="options-radio">
-            <radio value="{{item._id}}"/>
-          </view>
-          <view class="options-desc">{{item.desc}}</view>
-        </label>
-    </radio-group>
-    
-  </view>
+<view class="container padding-view">
+  <form catchsubmit="formSubmit" catchreset="formReset">
+    <view class="questions" wx:key="_id" wx:for="{{questions}}"> 
+      {{index + 1}}. {{item.desc}} 
+      <radio-group name="{{item._id}}" class="group" bindchange="radioChange">
+          <label class="options" wx:for="{{item.answers}}" wx:key="_id">
+            <view class="options-radio">
+              <radio value="{{item._id}}"/>
+            </view>
+            <view class="options-desc">{{item.desc}}</view>
+          </label>
+      </radio-group>
+    </view>
+    <view class="btn-area">
+        <button type="primary" formType="submit">提交</button>
+    </view>
+  </form>
 </view>

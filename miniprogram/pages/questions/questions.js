@@ -39,6 +39,9 @@ Page({
     //   .catch(err => console.error(err))
   },
 
+  formSubmit(e) {
+    console.log('form发生了submit事件，携带数据为：', e.detail.value)
+  },
   /**
    * Lifecycle function--Called when page is initially rendered
    */
