@@ -41,6 +41,12 @@ Page({
 
   formSubmit(e) {
     console.log('form发生了submit事件，携带数据为：', e.detail.value)
+
+    const url = "/pages/explain/result" 
+ 
+    wx.navigateTo({
+      url: url,
+    })
   },
   /**
    * Lifecycle function--Called when page is initially rendered

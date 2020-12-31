@@ -14,7 +14,8 @@
     "pages/im/im",
     "pages/im/room/room",
     "pages/first/first",
-    "pages/questions/questions"
+    "pages/questions/questions",
+    "pages/explain/result"
   ],
   "window": {
     "backgroundColor": "#F6F6F6",

@@ -1,0 +1,10 @@
+<!--miniprogram/pages/explain/result.wxml-->
+<view class="six-bg">
+  <view class="box1"></view>
+  <view class="box2"></view>
+  <view class="box3"></view>
+  <view class="canvas-module" animation="{{animationData}}">
+      <canvas canvas-id="myCanvas" class="canvas-class"/>
+  </view>
+  <button bindtap="start">开始canvas</button>
+</view>

@@ -1,0 +1,53 @@
+/* miniprogram/pages/explain/result.wxss */
+
+
+Page {
+
+  --sixWidthRPX: 208rpx;
+  --sixHeightRPX: 120rpx;
+  --sixWidthBigRPX: 416rpx;
+  --sixHeightBigRPX: 240rpx;
+}
+ 
+
+ 
+.six-bg{
+    padding: 167rpx;
+
+ }
+
+ .box1{
+  width:0;
+  border-left: var(--sixWidthRPX) solid transparent;
+  border-right: var(--sixWidthRPX) solid transparent;
+  border-bottom: var(--sixHeightRPX) solid #6c6;
+}
+
+
+.box2{
+  width: var(--sixWidthBigRPX);
+  height: var(--sixHeightBigRPX);
+  background-color: #6c6;
+}
+.box3{
+  width:0;
+  border-top: var(--sixHeightRPX)  solid #6c6;
+  border-left: var(--sixWidthRPX)  solid transparent;
+  border-right: var(--sixWidthRPX) solid transparent;
+}
+
+.canvas-module{
+  position: absolute;
+  width: 750rpx;
+  height: 750rpx;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  transform: scale(0);
+
+}
+
+.canvas-class{
+  width: 750rpx;
+  height: 750rpx;
+}
