@@ -133,16 +133,19 @@ Page({
     ctx.lineTo(dotFive.x / 2, dotFive.y / 2)
     ctx.lineTo(dotSix.x / 2, dotSix.y / 2)
     ctx.lineTo(dotOne.x / 2, dotOne.y / 2)
-    ctx.setStrokeStyle('yellow')
+    
+    ctx.strokeStyle = "rgba(49, 78, 107, 1)"
+    // ctx.setStrokeStyle('blue')
     ctx.setLineWidth(2)
     ctx.stroke()
     // 渐变色
-    const grd = ctx.createLinearGradient(0, 0, 200, 0)
-    grd.addColorStop(0, 'red')
-    grd.addColorStop(1, 'white')
-    ctx.setFillStyle(grd)
+    //const grd = ctx.createLinearGradient(0, 0, 200, 0)
+    //grd.addColorStop(0, 'red')
+    //grd.addColorStop(1, 'white')
+    ctx.fillStyle = "rgba(49, 78, 107, 0.8)";
+    //ctx.setFillStyle(rgba(11, 51, 142, 0.2))
     // 透明度
-    ctx.setGlobalAlpha(0.7)
+    ctx.setGlobalAlpha(0.8)
     // 填充
     ctx.fill()
     ctx.draw()

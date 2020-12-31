@@ -7,6 +7,7 @@ Page {
   --sixHeightRPX: 120rpx;
   --sixWidthBigRPX: 416rpx;
   --sixHeightBigRPX: 240rpx;
+  --backgroundColor:  rgba(53,34,73,0.8);
 }
  
 
@@ -20,18 +21,18 @@ Page {
   width:0;
   border-left: var(--sixWidthRPX) solid transparent;
   border-right: var(--sixWidthRPX) solid transparent;
-  border-bottom: var(--sixHeightRPX) solid #6c6;
+  border-bottom: var(--sixHeightRPX) solid var(--backgroundColor);
 }
 
 
 .box2{
   width: var(--sixWidthBigRPX);
   height: var(--sixHeightBigRPX);
-  background-color: #6c6;
+  background-color: var(--backgroundColor);
 }
 .box3{
   width:0;
-  border-top: var(--sixHeightRPX)  solid #6c6;
+  border-top: var(--sixHeightRPX)  solid var(--backgroundColor);
   border-left: var(--sixWidthRPX)  solid transparent;
   border-right: var(--sixWidthRPX) solid transparent;
 }
