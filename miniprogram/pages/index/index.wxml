@@ -1,5 +1,9 @@
 <!--index.wxml-->
 <view class="container">
+  <view class="logo">
+    <image class="logo-image" src="../../images/ll.png" mode="widthFix"></image>
+
+  </view>
 
   <!-- 用户 openid -->
   <view class="intro">
@@ -18,7 +22,8 @@
     <view class="intro-item">
       <text>.....</text>
     </view>
-
+  
+  <!--
     <view class="intro-item">
       <text>Do you love me？ of course</text>
     </view>
@@ -34,9 +39,9 @@
     <view class="intro-item">
       <text>.....</text>
     </view>
-
+-->
     <view class="intro-action">
-      <button type="primary" size="default" bindtap="goToPage" plain="false">探索爱</button>
+      <button type="primary" size="default" bindtap="goToPage" plain="false">开始探索之旅》</button>
     </view>
 
   </view>

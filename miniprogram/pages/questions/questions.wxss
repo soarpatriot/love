@@ -1,5 +1,8 @@
 /* miniprogram/pages/questions.wxss */
 
+.tips {
+  padding: 20rpx 0;
+}
 .padding-view {
   padding: 20rpx;
 }

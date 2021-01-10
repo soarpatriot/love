@@ -1,0 +1,10 @@
+<!--miniprogram/pages/questions/me.wxml-->
+<text>miniprogram/pages/questions/me.wxml</text>
+<view class="container padding-view">
+  <view>
+    如下这个问题是自己回答
+  </view>
+  <form catchsubmit="formSubmit" hidden="{{!hidden}}" catchreset="formReset">
+    
+  </form>
+</view>

@@ -1,9 +1,14 @@
 
 <view class="container padding-view">
-  <form catchsubmit="formSubmit" catchreset="formReset">
+  <view class="tips">认真思考如下问题，来探索他/她 爱你有多深？</view>
+  <loading hidden="{{hidden}}" bindchange="loadingChange">
+    加载中...
+  </loading>
+  <form catchsubmit="formSubmit" hidden="{{!hidden}}" catchreset="formReset">
     <view class="questions" wx:key="_id" wx:for="{{questions}}"> 
       {{index + 1}}. {{item.desc}} 
-      <radio-group name="{{item._id}}" class="group" bindchange="radioChange">
+      <input hidden="true" name="{{item.category}}_question_id" value="{{item._id}}"/>
+      <radio-group name="{{item.category}}_answer_id" class="group" bindchange="radioChange">
           <label class="options" wx:for="{{item.answers}}" wx:key="_id">
             <view class="options-radio">
               <radio value="{{item._id}}"/>

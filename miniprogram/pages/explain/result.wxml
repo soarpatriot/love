@@ -6,5 +6,7 @@
   <view class="canvas-module" animation="{{animationData}}">
       <canvas canvas-id="myCanvas" class="canvas-class"/>
   </view>
+  <view class="tips">综合</view>
   <button bindtap="start">开始canvas</button>
+  <view class="tips">单项</view>
 </view>
