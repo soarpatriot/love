@@ -46,10 +46,11 @@ Page({
 
   formSubmit(e) {
     const values = e.detail.value
+    let blank = false
     let journey = {}
     console.log('form发生了submit事件，携带数据为：', values)
     const categories = this.data.catetroies
-
+    
     categories.forEach((e) => {
       const q_id = 'question_id'
       const a_id = 'answer_id'
@@ -57,13 +58,24 @@ Page({
       //journey[e] = null
       //console.log('qqq', values[`${e}_${q_id}`])
       //console.log('aaa', values[`${e}_${a_id}`])
-
+      if(values[`${e}_${a_id}`] == '') {
+        blank = true
+      }
       journey[e] = {
         q_id: values[`${e}_${q_id}`],
         a_id: values[`${e}_${a_id}`]
       }
       //journey[e][a_id] = ''
     })
+
+    // blanks = values.filter((v) => { v === ''})
+    if(blank) {
+      wx.showToast({
+        title: '您有未选择答案的题目，请选择！'
+      })
+      return
+    }
+
     //console.log('journey', journey)
 
     wx.cloud.callFunction({
