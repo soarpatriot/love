@@ -55,8 +55,8 @@ Page({
       const a_id = 'answer_id'
       //journey = 
       //journey[e] = null
-      console.log('qqq', values[`${e}_${q_id}`])
-      console.log('aaa', values[`${e}_${a_id}`])
+      //console.log('qqq', values[`${e}_${q_id}`])
+      //console.log('aaa', values[`${e}_${a_id}`])
 
       journey[e] = {
         q_id: values[`${e}_${q_id}`],
@@ -64,7 +64,7 @@ Page({
       }
       //journey[e][a_id] = ''
     })
-    console.log('journey', journey)
+    //console.log('journey', journey)
 
     wx.cloud.callFunction({
       name: 'journeys',
