@@ -6,7 +6,7 @@ Page({
    */
   data: {
     hidden: false,
-    catetroies: ['love','life','social','bus','promising'],
+    catetroies: ['love', 'life', 'social', 'belief', 'promising'],
     questions: []
   },
 
@@ -72,6 +72,11 @@ Page({
     }).then(res => {
       const data = JSON.parse(res.result)
       console.info(data)
+      
+      const url = "/pages/explain/result"
+      wx.navigateTo({
+        url: url,
+      })
     })
     .catch(e => {
       console.error('[云函数] [login] 调用失败', e)

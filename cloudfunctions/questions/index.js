@@ -1,5 +1,5 @@
 // 云函数入口文件
-const cloud = require('../journeys/node_modules/wx-server-sdk')
+const cloud = require('wx-server-sdk')
 
 cloud.init({
   // API 调用都保持和云函数当前所在环境一致
@@ -8,7 +8,7 @@ cloud.init({
 
 // 云函数入口函数
 exports.main = async (event, context) => {
-  const categories = ['life', 'bus', 'love', 'promising', 'social']
+  const categories = ['love', 'life', 'social', 'belief', 'promising']
 
   qsPromises = categories.map((c) => getSampleQuestion(c))
 
@@ -17,7 +17,7 @@ exports.main = async (event, context) => {
 
   const arr = resArr.reduce((a, b) => [...a, ...b], []);
 
-  
+  console.log(arr)
   // const db = cloud.database()
   // const res = await db.collection('questions').aggregate()
   // .match({category:'life'})
@@ -33,10 +33,10 @@ exports.main = async (event, context) => {
   return JSON.stringify(arr)
 }
 
-function getSampleQuestion(catetory) {
+function getSampleQuestion(category) {
   const db = cloud.database()
   return db.collection('questions').aggregate()
-  .match({category:catetory})
+  .match({category:category})
   .sample({
     size:1
   })
