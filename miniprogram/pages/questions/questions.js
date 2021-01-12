@@ -71,7 +71,8 @@ Page({
     // blanks = values.filter((v) => { v === ''})
     if(blank) {
       wx.showToast({
-        title: '您有未选择答案的题目，请选择！'
+        title: '您有未选择答案的题目，请选择！',
+        icon: 'error'
       })
       return
     }

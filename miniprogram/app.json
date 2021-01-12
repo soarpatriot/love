@@ -16,7 +16,8 @@
     "pages/first/first",
     "pages/questions/questions",
     "pages/explain/result",
-    "pages/questions/me"
+    "pages/questions/me",
+    "pages/my/main"
   ],
   "window": {
     "backgroundColor": "#F6F6F6",
@@ -24,6 +25,26 @@
     "navigationBarBackgroundColor": "#F6F6F6",
     "navigationBarTitleText": "爱有多深？",
     "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#7A7E83",
+    "selectedColor": "#3cc51f",
+    "borderStyle": "black",
+    "backgroundColor": "#ffffff",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "images/code-db-inc-dec.png",
+        "selectedIconPath": "images/code-db-inc-dec.png",
+        "text": "组件"
+      },
+      {
+        "pagePath": "pages/my/main",
+        "iconPath": "images/aui-icon-my.png",
+        "selectedIconPath": "images/aui-icon-my-active.png",
+        "text": "我的"
+      }
+    ]
   },
   "sitemapLocation": "sitemap.json",
   "style": "v2"

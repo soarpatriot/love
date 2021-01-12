@@ -1,0 +1,21 @@
+/* miniprogram/pages/my/main.wxss */
+
+.avatar{
+  width: 128rpx;
+  height: 128rpx;
+}
+.nick-name {
+  margin-left: 20rpx;
+}
+.my-intro{
+  padding: 40rpx 20rpx;
+  display: flex;
+  direction: row;
+  align-items: center;
+  margin-bottom: 20rpx;
+}
+.item{
+  margin-left: 20rpx;
+  padding: 40rpx 0;
+  border-bottom: 2rpx solid #ffffff;
+}
