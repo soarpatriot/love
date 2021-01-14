@@ -9,4 +9,40 @@
   <view class="tips">综合</view>
   <button bindtap="start">开始canvas</button>
   <view class="tips">单项</view>
+  <view class="comprohesive">
+    <view class="progress-box">
+      <view class="catetory">专业</view>
+      <progress class="ability" color="#FF00FF" percent="60" active stroke-width="6" />
+    </view>
+    <view class="progress-box">
+      <view class="catetory">外向</view>
+      <progress class="ability" color="#ffff66" percent="60" active stroke-width="6" />
+    </view>
+    <view class="progress-box">
+      <view class="catetory">专业的</view>
+      <progress class="ability" color="#10AEFF" percent="60" active stroke-width="6" />
+    </view>
+    <view class="progress-box">
+      <view class="catetory">情绪</view>
+      <progress class="ability" color="#ff3333" percent="50" active stroke-width="6" />
+    </view>
+  </view>
+
 </view>
+
+
+<!-- 
+      <view class="progress-box">
+      <view class="catetory">外向</view>
+      <progress percent="60" active stroke-width="6" />
+    </view>
+    <view class="progress-box">
+      <view class="catetory">专业</view>
+      <progress percent="60" active stroke-width="6" />
+    </view>
+    <view class="progress-box">
+      <view class="catetory">情绪</view>
+      
+    </view>
+    <progress percent="60" active stroke-width="6" />
+-->
