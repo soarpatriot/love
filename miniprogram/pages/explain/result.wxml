@@ -12,19 +12,23 @@
   <view class="comprohesive">
     <view class="progress-box">
       <view class="catetory">专业</view>
-      <progress class="ability" color="#FF00FF" percent="60" active stroke-width="6" />
+      <progress class="ability" color="#FF00FF" percent="{{features.love.weight * 10}}" active stroke-width="6" />
     </view>
     <view class="progress-box">
       <view class="catetory">外向</view>
-      <progress class="ability" color="#ffff66" percent="60" active stroke-width="6" />
+      <progress class="ability" color="#ffff66" percent="{{features.life.weight * 10}}" active stroke-width="6" />
     </view>
     <view class="progress-box">
       <view class="catetory">专业的</view>
-      <progress class="ability" color="#10AEFF" percent="60" active stroke-width="6" />
+      <progress class="ability" color="#10AEFF" percent="{{features.social.weight * 10}}" active stroke-width="6" />
     </view>
     <view class="progress-box">
       <view class="catetory">情绪</view>
-      <progress class="ability" color="#ff3333" percent="50" active stroke-width="6" />
+      <progress class="ability" color="#ff3333" percent="{{features.belief.weight * 10}}" active stroke-width="6" />
+    </view>
+    <view class="progress-box">
+      <view class="catetory">情绪</view>
+      <progress class="ability" color="#ff3333" percent="{{features.promising.weight * 10}}" active stroke-width="6" />
     </view>
   </view>
 

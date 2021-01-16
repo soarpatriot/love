@@ -11,7 +11,7 @@ Page({
   },
 
   goToPage: function() {
-    const url = "/pages/explain/result" 
+    const url = "/pages/questions/questions" 
  
     wx.navigateTo({
       url: url,

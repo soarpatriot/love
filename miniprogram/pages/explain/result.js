@@ -13,7 +13,8 @@ Page({
       four: 6,
       five: 4,
       six: 8
-    }
+    },
+    features: {}
   },
 
   /**
@@ -32,7 +33,24 @@ Page({
     })
   },
   onLoad: function (options) {
-
+    const journey_id = options.journey_id
+    console.log("journey_id: " + journey_id)
+    wx.cloud.callFunction({
+      name: 'journeys',
+      data: {
+        action: 'findJourney',
+        id: journey_id}
+    }).then(res => {
+      const data = JSON.parse(res.result)
+      this.setData({
+        features: data
+      })
+      console.info(data)
+      
+    })
+    .catch(e => {
+      console.error('[云函数] [login] 调用失败', e)
+    })
   },
 
   /**

@@ -48,12 +48,17 @@ Page({
     const values = e.detail.value
     let blank = false
     let journey = {}
-    console.log('form发生了submit事件，携带数据为：', values)
+    let answers = []
+    //console.log('form发生了submit事件，携带数据为：', values)
     const categories = this.data.catetroies
     
     categories.forEach((e) => {
       const q_id = 'question_id'
       const a_id = 'answer_id'
+      let answer = {
+        q_id: values[`${e}_${q_id}`],
+        a_id: values[`${e}_${a_id}`]
+      }
       //journey = 
       //journey[e] = null
       //console.log('qqq', values[`${e}_${q_id}`])
@@ -61,10 +66,7 @@ Page({
       if(values[`${e}_${a_id}`] == '') {
         blank = true
       }
-      journey[e] = {
-        q_id: values[`${e}_${q_id}`],
-        a_id: values[`${e}_${a_id}`]
-      }
+      answers.push(answer)
       //journey[e][a_id] = ''
     })
 
@@ -78,15 +80,20 @@ Page({
     }
 
     //console.log('journey', journey)
-
+    journey = {
+      answers: answers
+    }
     wx.cloud.callFunction({
       name: 'journeys',
-      data: journey
+      data: { 
+        action: 'addJourney',
+        entity: journey }
     }).then(res => {
       const data = JSON.parse(res.result)
-      console.info(data)
+      console.log('save data: ')
+      console.info(JSON.parse(res.result))
       
-      const url = "/pages/explain/result"
+      const url = "/pages/explain/result?journey_id=" + data._id
       wx.navigateTo({
         url: url,
       })

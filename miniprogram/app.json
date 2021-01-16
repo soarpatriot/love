@@ -16,8 +16,8 @@
     "pages/first/first",
     "pages/questions/questions",
     "pages/explain/result",
-    "pages/questions/me",
-    "pages/my/main"
+    "pages/my/main",
+    "pages/index/six"
   ],
   "window": {
     "backgroundColor": "#F6F6F6",
@@ -34,8 +34,8 @@
     "list": [
       {
         "pagePath": "pages/index/index",
-        "iconPath": "images/code-db-inc-dec.png",
-        "selectedIconPath": "images/code-db-inc-dec.png",
+        "iconPath": "images/aui-icon-my.png",
+        "selectedIconPath": "images/aui-icon-my.png",
         "text": "组件"
       },
       {

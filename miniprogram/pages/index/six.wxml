@@ -1,0 +1,2 @@
+<!--miniprogram/pages/index/six.wxml-->
+<canvas canvas-id="canvas" class="canvas" style="width: 100%; height: 600rpx;background:#fff;;"/>
