@@ -6,7 +6,7 @@ Page({
    */
   data: {
     hidden: false,
-    catetroies: ['love', 'life', 'social', 'belief', 'promising'],
+    catetroies: ['love', 'life', 'family', 'social', 'belief', 'promising'],
     questions: []
   },
 
@@ -93,7 +93,7 @@ Page({
       console.log('save data: ')
       console.info(JSON.parse(res.result))
       
-      const url = "/pages/explain/result?journey_id=" + data._id
+      const url = "/pages/explain/list?journey_id=" + data._id
       wx.navigateTo({
         url: url,
       })

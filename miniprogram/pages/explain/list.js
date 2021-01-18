@@ -3,8 +3,36 @@
 let ploy = require('../../libs/ploy.js')
 
 Page({
-  data: {},
-  onLoad: function () {
+  data: {
+    categories: ['love', 'family', 'life', 'social', 'belief', 'promising']
+  },
+  onLoad: function (options) {
+    const journey_id = options.journey_id
+    // console.log("journey_id: " + journey_id)
+    let journeyData = []
+    wx.cloud.callFunction({
+      name: 'journeys',
+      data: {
+        action: 'findJourney',
+        id: journey_id}
+    }).then(res => {
+      const data = JSON.parse(res.result)
+      console.info(data)
+      
+      this.setData({
+        features: data
+      })
+
+      journeyData = this.data.categories.map((e) => {
+        data[e]['fullScore'] = 10
+        return data[e]
+      })   
+      this.init(journeyData);
+      console.info(journeyData)
+    })
+    .catch(e => {
+      console.error('[云函数] [login] 调用失败', e)
+    })
     // 能力值数据
     const mData = [
       { title: "open", score: 10, fullScore: 10 },
@@ -14,7 +42,7 @@ Page({
       { title: "response", score: 7, fullScore: 10 },
       { title: "emotion", score: 6, fullScore: 10 },
     ];
-    this.init(mData);
+    
   },
  
   getRatio() {
@@ -216,9 +244,9 @@ Page({
     const mCount = mData.length;
     let radius = [];
     mData.forEach((item, index) => {
-      radius.push((item.score / item.fullScore) * lRadius);
+      radius.push((item.weight / item.fullScore) * lRadius);
     });
-    radius.push((mData[0].score / mData[0].fullScore) * lRadius);
+    radius.push((mData[0].weight / mData[0].fullScore) * lRadius);
  
     const mAngle = (Math.PI * 2) / mCount;
     let coordinates = [];
@@ -279,7 +307,7 @@ Page({
           ctx.setTextBaseline("middle");
           x += moveDistance;
         }
-        ctx.fillText(mData[index].title, x, y);
+        ctx.fillText(mData[index].category, x, y);
       }
     });
   },

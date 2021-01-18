@@ -1,0 +1,34 @@
+<!--miniprogram/pages/explain/list.wxml-->
+<view class="container">
+  <canvas canvas-id="canvas" class="canvas" style="width: 100%; height: 600rpx;background:#fff;;"/>
+
+  <view class="analysis">
+    <view class="tips">综合</view>
+  
+    <view class="tips">单项</view>
+    <view class="comprohesive">
+      <view class="progress-box">
+        <view class="catetory">专业</view>
+        <progress class="ability" color="#FF00FF" percent="{{features.love.weight * 10}}" active stroke-width="6" />
+      </view>
+      <view class="progress-box">
+        <view class="catetory">外向</view>
+        <progress class="ability" color="#ffff66" percent="{{features.life.weight * 10}}" active stroke-width="6" />
+      </view>
+      <view class="progress-box">
+        <view class="catetory">专业的</view>
+        <progress class="ability" color="#10AEFF" percent="{{features.social.weight * 10}}" active stroke-width="6" />
+      </view>
+      <view class="progress-box">
+        <view class="catetory">情绪</view>
+        <progress class="ability" color="#ff3333" percent="{{features.belief.weight * 10}}" active stroke-width="6" />
+      </view>
+      <view class="progress-box">
+        <view class="catetory">情绪</view>
+        <progress class="ability" color="#ff3333" percent="{{features.promising.weight * 10}}" active stroke-width="6" />
+      </view>
+    </view>
+
+  </view>
+
+</view>
