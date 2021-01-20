@@ -4,6 +4,7 @@ let ploy = require('../../libs/ploy.js')
 
 Page({
   data: {
+    animationData: {},
     categories: ['love', 'family', 'life', 'social', 'belief', 'promising']
   },
   onLoad: function (options) {
@@ -27,7 +28,8 @@ Page({
         data[e]['fullScore'] = 10
         return data[e]
       })   
-      this.init(journeyData);
+      this.init(journeyData.slice(0,5));
+      
       console.info(journeyData)
     })
     .catch(e => {
@@ -154,6 +156,7 @@ Page({
       -rotateAngle
     );
     ctx.draw();
+
   },
   /**
    * 获取多边形坐标

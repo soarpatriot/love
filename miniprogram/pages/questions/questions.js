@@ -3,6 +3,7 @@ Page({
 
   /**
    * Page initial data
+   * //kindness, life,  emotion, cooperate, belief, potential
    */
   data: {
     hidden: false,

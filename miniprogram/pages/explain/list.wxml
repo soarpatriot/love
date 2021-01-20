@@ -1,7 +1,8 @@
 <!--miniprogram/pages/explain/list.wxml-->
 <view class="container">
-  <canvas canvas-id="canvas" class="canvas" style="width: 100%; height: 600rpx;background:#fff;;"/>
-
+  <view class="canvas-module" animation="{{animationData}}">
+    <canvas canvas-id="canvas" class="canvas" style="width: 100%; height: 600rpx;background:#fff;;"/>
+  </view>
   <view class="analysis">
     <view class="tips">综合</view>
   

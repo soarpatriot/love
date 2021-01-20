@@ -1,6 +1,6 @@
 
 <view class="container padding-view">
-  <view class="tips">认真思考如下问题，来探索他/她 爱你有多深？</view>
+  <view class="tips">认真思考如下问题了解自己</view>
   <loading hidden="{{hidden}}" bindchange="loadingChange">
     加载中...
   </loading>

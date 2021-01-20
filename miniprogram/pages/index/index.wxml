@@ -1,23 +1,20 @@
 <!--index.wxml-->
-<view class="container">
+<view class="container home-container">
+  <view class="title">
+      Explorer yourself
+  </view>
   <view class="logo">
-    <image class="logo-image" src="../../images/ll.png" mode="widthFix"></image>
+    <image class="logo-image" src="../../images/test.png" mode="widthFix"></image>
 
   </view>
 
   <!-- 用户 openid -->
   <view class="intro">
+   
     <view class="intro-item">
-      <text>你爱我吗？ 当然</text>
+      <text>a few of questions to dive into your heart!</text>
     </view>
     
-    <view class="intro-item">
-      <text>有多爱？ 山无棱天地合才敢与君绝</text>
-    </view>
-    
-    <view class="intro-item">
-      <text>但是？ 究竟你爱我有几分？爱我有多深？</text>
-    </view>
 
     <view class="intro-item">
       <text>.....</text>
@@ -41,7 +38,7 @@
     </view>
 -->
     <view class="intro-action">
-      <button type="primary" size="default" bindtap="goToPage" plain="false">开始探索之旅》</button>
+      <button type="primary" size="default" bindtap="goToPage" plain="false">Start》</button>
     </view>
 
   </view>
