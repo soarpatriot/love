@@ -9,23 +9,23 @@
     <view class="tips">单项</view>
     <view class="comprohesive">
       <view class="progress-box">
-        <view class="catetory">openness</view>
+        <view class="catetory">Openness</view>
         <progress class="ability" color="#99ff33" percent="{{features.openness.weight * 10}}" active stroke-width="6" />
       </view>
       <view class="progress-box">
-        <view class="catetory">emotion</view>
+        <view class="catetory">Emotion</view>
         <progress class="ability" color="#FF6A6A" percent="{{features.emotion.weight * 10}}" active stroke-width="6" />
       </view>
       <view class="progress-box">
-        <view class="catetory">cooperation</view>
+        <view class="catetory">Cooperation</view>
         <progress class="ability" color="#10AEFF" percent="{{features.cooperation.weight * 10}}" active stroke-width="6" />
       </view>
       <view class="progress-box">
-        <view class="catetory">belief</view>
+        <view class="catetory">Belief</view>
         <progress class="ability" color="#FFB90F" percent="{{features.belief.weight * 10}}" active stroke-width="6" />
       </view>
       <view class="progress-box">
-        <view class="catetory">potential</view>
+        <view class="catetory">Potential</view>
         <progress class="ability" color="#003366" percent="{{features.potential.weight * 10}}" active stroke-width="6" />
       </view>
     </view>

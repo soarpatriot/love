@@ -3,3 +3,22 @@
 .analysis{
   padding: 30rpx 30rpx
 }
+
+.comprohesive {
+  display: flex;
+  flex-direction: column;
+}
+
+.progress-box {
+  margin-top: 20rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content:flex-end;
+}
+.catetory {
+  padding-right: 30rpx;
+  display: flex;
+}
+.ability {
+  width: 70%;
+}
