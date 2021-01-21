@@ -5,7 +5,7 @@ let ploy = require('../../libs/ploy.js')
 Page({
   data: {
     animationData: {},
-    categories: ['love', 'family', 'life', 'social', 'belief', 'promising']
+    categories: ['openness', 'emotion', 'cooperation', 'belief', 'potential']
   },
   onLoad: function (options) {
     const journey_id = options.journey_id

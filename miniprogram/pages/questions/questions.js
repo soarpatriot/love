@@ -7,7 +7,7 @@ Page({
    */
   data: {
     hidden: false,
-    catetroies: ['love', 'life', 'family', 'social', 'belief', 'promising'],
+    catetroies: ['openness', 'emotion', 'cooperation', 'belief', 'potential'],
     questions: []
   },
 
