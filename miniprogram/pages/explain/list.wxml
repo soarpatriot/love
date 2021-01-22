@@ -5,7 +5,7 @@
   </view>
   <view class="analysis">
     <view class="tips">综合</view>
-  
+    <view class="tips">分数</view>
     <view class="tips">单项</view>
     <view class="comprohesive">
       <view class="progress-box">
@@ -29,6 +29,7 @@
         <progress class="ability" color="#003366" percent="{{features.potential.weight}}" active stroke-width="6" />
       </view>
     </view>
+    <view class="tips">Suggessions</view>
 
   </view>
 

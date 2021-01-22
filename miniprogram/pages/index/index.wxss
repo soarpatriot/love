@@ -1,17 +1,46 @@
 /**index.wxss**/
 
 
-page {
-  background: #fff; /**#f6f6f6**/
+/* page {
+  background: #fff; 
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
+} */
+
+page {
+  height: 100%;
+  width: 100%;
 }
 
-.home-container {
-  
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction:column;
+  justify-content:space-around;
+  align-items:center;
 }
+
+.logo-title {
+  height: 320rpx;
+  display: flex;
+  flex-direction:column;
+  justify-content:space-between;
+  align-items:center;
+}
+
+.logo-image {
+  width: 240rpx;
+}
+
+.desc-text {
+  font-size: medium;
+  /* color: green; */
+  font-weight: 400;
+}
+
+/*
 .title {
   padding: 40rpx;
   font-size: 1.2rem;
@@ -192,3 +221,4 @@ page {
   line-height: 36rpx;
   word-break: break-all;
 }
+*/

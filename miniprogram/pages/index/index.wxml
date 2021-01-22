@@ -1,24 +1,31 @@
 <!--index.wxml-->
-<view class="container home-container">
-  <view class="title">
+<view class="container">
+  <!-- <view class="title">
       Explorer yourself
-  </view>
-  <view class="logo">
+  </view> -->
+  <view class="item logo-title">
     <image class="logo-image" src="../../images/test.png" mode="widthFix"></image>
-
+    <text class="desc-text">Better Yourself</text>
   </view>
 
-  <!-- 用户 openid -->
-  <view class="intro">
+  <!-- <view class="item">
+    
+  </view> -->
+
+  <view class="item">
+    <button style="width:240rpx;height: 32rpx;padding:2;" type="primary" bindtap="goToPage" plain="false">Start</button>
+  </view>
+
+  </view>
    
-    <view class="intro-item">
+    <!-- <view class="intro-item">
       <text>a few of questions to dive into your heart!</text>
-    </view>
+    </view> -->
     
 
-    <view class="intro-item">
+    <!-- <view class="intro-item">
       <text>.....</text>
-    </view>
+    </view> -->
   
   <!--
     <view class="intro-item">
@@ -37,11 +44,7 @@
       <text>.....</text>
     </view>
 -->
-    <view class="intro-action">
-      <button type="primary" size="default" bindtap="goToPage" plain="false">Start》</button>
-    </view>
-
-  </view>
+    
 
 
   <!-- 上传图片 
@@ -96,5 +99,3 @@
     </navigator>
   </view>
 -->
-
-</view>
