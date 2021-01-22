@@ -28,23 +28,13 @@ Page({
         data[e]['fullScore'] = 10
         return data[e]
       })   
-      this.init(journeyData.slice(0,5));
+      this.init(journeyData);
       
       console.info(journeyData)
     })
     .catch(e => {
       console.error('[云函数] [login] 调用失败', e)
     })
-    // 能力值数据
-    const mData = [
-      { title: "open", score: 10, fullScore: 10 },
-      { title: "cons", score: 9, fullScore: 10 },
-      { title: "agreeable", score: 6, fullScore: 10 },
-      { title: "kind", score: 6, fullScore: 10 },
-      { title: "response", score: 7, fullScore: 10 },
-      { title: "emotion", score: 6, fullScore: 10 },
-    ];
-    
   },
  
   getRatio() {
