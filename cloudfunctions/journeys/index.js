@@ -16,6 +16,9 @@ exports.main = async (event, context) => {
     case 'findJourney': {
       return findJourney(event.id)
     }
+    case 'findJourneyAnswers': {
+      return findJourneyAnswers(event.id)
+    }
     default: {
       return
     }
@@ -72,6 +75,50 @@ async function findJourney(id) {
   const s = scores(answers)
   const re = generte(s)
   return JSON.stringify(re)
+}
+
+async function findJourneyAnswers(id) {
+  
+  const db = cloud.database()
+  const _ = db.command
+  const result = await db.collection('journeys').doc(id).get()
+  const journeyAnswers = result.data.answers
+  const qIds = journeyAnswers.map((e) => { return e.q_id})
+
+  const r = await db.collection('questions').aggregate()
+  .match({_id: _.in(qIds)})
+  .lookup({
+    from: 'answers',
+    localField: '_id',
+    foreignField: 'question_id',
+    as: 'answers'
+  }).end()
+
+  const questions = yourSelected(journeyAnswers, r.list)
+  const total_score = totalScore(questions)
+  const rs = {
+    questions, questions,
+    total_score: total_score
+  }
+  return JSON.stringify(rs)
+}
+
+function yourSelected(journeyAnswers, questionAnswers){
+  return questionAnswers.map((e) => {
+    const journey_question = journeyAnswers.find(element => element.q_id == e._id);
+    const found = e.answers.find(element => element._id == journey_question.a_id );
+
+    e.selected = found
+    e.selected['full_score'] = 100
+    e.selected['category'] = e.category
+    return e
+  })
+}
+
+function totalScore(questions) {
+  const scores = questions.map((e) => e.selected.weight * e.weight / 100)
+  const acc = (accumulator, currentValue) => accumulator + currentValue;
+  return scores.reduce(acc)
 }
 
 function scores(answers) {

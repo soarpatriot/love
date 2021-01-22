@@ -11,26 +11,51 @@ Page({
     const journey_id = options.journey_id
     // console.log("journey_id: " + journey_id)
     let journeyData = []
+
+    
+    wx.cloud.callFunction({
+      name: 'journeys',
+      data: {
+        action: 'findJourneyAnswers',
+        id: journey_id}
+    }).then(res => {
+      const result = JSON.parse(res.result)
+      
+      console.info(result)
+      
+      let features = {}
+      this.data.categories.forEach((key) => {
+        
+        const q = result.questions.find(element => element.category == key)
+        features[key] = q.selected
+      })
+      
+      this.setData({
+        features: features
+      })
+
+      let selected = this.data.categories.map((value) => {
+        const q = result.questions.find(element => element.category == value)
+        console.log("q" + q)
+        return q.selected
+      })
+      
+      console.info(selected)
+      this.init(selected);
+      
+
+    })
+    .catch(e => {
+      console.error('[云函数]fff [login] 调用失败', e)
+    })
+  
     wx.cloud.callFunction({
       name: 'journeys',
       data: {
         action: 'findJourney',
         id: journey_id}
     }).then(res => {
-      const data = JSON.parse(res.result)
-      console.info(data)
       
-      this.setData({
-        features: data
-      })
-
-      journeyData = this.data.categories.map((e) => {
-        data[e]['fullScore'] = 10
-        return data[e]
-      })   
-      this.init(journeyData);
-      
-      console.info(journeyData)
     })
     .catch(e => {
       console.error('[云函数] [login] 调用失败', e)
@@ -237,9 +262,9 @@ Page({
     const mCount = mData.length;
     let radius = [];
     mData.forEach((item, index) => {
-      radius.push((item.weight / item.fullScore) * lRadius);
+      radius.push((item.weight / item.full_score) * lRadius);
     });
-    radius.push((mData[0].weight / mData[0].fullScore) * lRadius);
+    radius.push((mData[0].weight / mData[0].full_score) * lRadius);
  
     const mAngle = (Math.PI * 2) / mCount;
     let coordinates = [];
@@ -279,6 +304,7 @@ Page({
     const moveDistance = 15 / this.getRatio();
     ctx.setFontSize(fontSize);
     ctx.setFillStyle(color);
+    console.log("coordinates: " + coordinates)
     coordinates.forEach((coordinate, index) => {
       if (mData[index]) {
         let x = coordinate[0];
