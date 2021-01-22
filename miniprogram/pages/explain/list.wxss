@@ -10,15 +10,22 @@
 }
 
 .progress-box {
-  margin-top: 20rpx;
+  margin-top: 0rpx;
   display: flex;
   flex-direction: row;
   justify-content:flex-end;
 }
-.catetory {
+.catetory, .total {
   padding-right: 30rpx;
   display: flex;
+  font-size: 32rpx;
+  color: grey;
 }
 .ability {
   width: 70%;
+}
+
+.tips {
+  font-size: 42rpx;
+  padding: 30rpx 0rpx;
 }

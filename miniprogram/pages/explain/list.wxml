@@ -4,13 +4,13 @@
     <canvas canvas-id="canvas" class="canvas" style="width: 100%; height: 600rpx;background:#fff;;"/>
   </view>
   <view class="analysis">
-    <view class="tips">综合</view>
-    <view class="tips">分数</view>
-    <view class="tips">单项</view>
+    <view class="tips">Comprehensiveness</view>
+    <view class="total">Total Score: {{totalScore}}</view>
+    <view class="tips">Describes</view>
     <view class="comprohesive">
       <view class="progress-box">
         <view class="catetory">Openness</view>
-        <progress class="ability" color="#99ff33" percent="{{features.openness.weight }}" active stroke-width="6" />
+        <progress class="ability" color="#99ff33" percent="{{features.openness.weight}}" active stroke-width="6" />
       </view>
       <view class="progress-box">
         <view class="catetory">Emotion</view>
@@ -30,7 +30,7 @@
       </view>
     </view>
     <view class="tips">Suggessions</view>
-
+    <view class="suggession">{{suggession}}</view>
   </view>
 
 </view>

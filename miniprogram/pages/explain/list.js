@@ -31,7 +31,8 @@ Page({
       })
       
       this.setData({
-        features: features
+        totalScore: result.total_score,
+        features: features,
       })
 
       let selected = this.data.categories.map((value) => {
