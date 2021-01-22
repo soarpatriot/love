@@ -118,7 +118,8 @@ function yourSelected(journeyAnswers, questionAnswers){
 function totalScore(questions) {
   const scores = questions.map((e) => e.selected.weight * e.weight / 100)
   const acc = (accumulator, currentValue) => accumulator + currentValue;
-  return scores.reduce(acc)
+  const snum = scores.reduce(acc)
+  return snum.toFixed(2)
 }
 
 function scores(answers) {
