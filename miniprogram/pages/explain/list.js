@@ -22,10 +22,10 @@ Page({
       const result = JSON.parse(res.result)
       
       console.info(result)
-      
+      // total_score:  result.total_score
+
       let features = {}
       this.data.categories.forEach((key) => {
-        
         const q = result.questions.find(element => element.category == key)
         features[key] = q.selected
       })
@@ -42,24 +42,11 @@ Page({
       
       console.info(selected)
       this.init(selected);
-      
-
     })
     .catch(e => {
       console.error('[云函数]fff [login] 调用失败', e)
     })
   
-    wx.cloud.callFunction({
-      name: 'journeys',
-      data: {
-        action: 'findJourney',
-        id: journey_id}
-    }).then(res => {
-      
-    })
-    .catch(e => {
-      console.error('[云函数] [login] 调用失败', e)
-    })
   },
  
   getRatio() {
