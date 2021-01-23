@@ -1,14 +1,15 @@
 
 <view class="container padding-view">
-  <view class="tips">认真思考如下问题了解自己</view>
+  <view class="title">Re recognize yourself</view>
+  <view class="intro-section">Please take this question serious, it will help to know you more than before.</view>
   <loading hidden="{{hidden}}" bindchange="loadingChange">
     加载中...
   </loading>
-  <form catchsubmit="formSubmit" hidden="{{!hidden}}" catchreset="formReset">
+  <form class="question-form" catchsubmit="formSubmit" hidden="{{!hidden}}" catchreset="formReset">
     <view class="questions" wx:key="_id" wx:for="{{questions}}"> 
       {{index + 1}}. {{item.desc}} 
       <input hidden="true" name="{{item.category}}_question_id" value="{{item._id}}"/>
-      <radio-group name="{{item.category}}_answer_id" class="group" bindchange="radioChange">
+      <radio-group class="radio-group" name="{{item.category}}_answer_id" class="group" bindchange="radioChange">
           <label class="options" wx:for="{{item.answers}}" wx:key="_id">
             <view class="options-radio">
               <radio value="{{item._id}}"/>
