@@ -1,10 +1,10 @@
 /* miniprogram/pages/explain/list.wxss */
 
-.analysis{
+.analysis {
   padding: 30rpx 30rpx
 }
 
-.comprohesive {
+.comprohesive, .suggestion {
   display: flex;
   flex-direction: column;
 }
@@ -15,7 +15,7 @@
   flex-direction: row;
   justify-content:flex-end;
 }
-.catetory, .total, .suggestion {
+.catetory, .total {
   padding-right: 30rpx;
   display: flex;
   font-size: 32rpx;
@@ -28,4 +28,23 @@
 .tips {
   font-size: 42rpx;
   padding: 30rpx 0rpx;
+}
+
+.desc {
+  padding-bottom: 30rpx;
+}
+
+.sug-catetory {
+  font-size: 40rpx;
+  color: rgb(46, 46, 46);
+}
+
+.sub-tips {
+  font-size: 36rpx;
+  color: rgb(77, 77, 77);
+}
+
+.question, .answer, .sug {
+  font-size: 32rpx;
+  color: gray;
 }

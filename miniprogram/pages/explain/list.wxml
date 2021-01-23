@@ -29,8 +29,54 @@
         <progress class="ability" color="#003366" percent="{{features.potential.weight}}" active stroke-width="6" />
       </view>
     </view>
-    <view class="tips">Suggestions</view>
-    <view class="suggestion">{{suggestions}}</view>
+    <view class="tips">Anaysis</view>
+    <view class="suggestion">
+      <view class="desc">
+        <view class="sug-catetory">Openness</view>
+        <view class="sub-tips">Question:</view>
+        <view class="question">{{questions.openness}}</view>
+        <view class="sub-tips">Answer:</view>
+        <view class="answer">{{features.openness.desc}}</view>
+        <view class="sub-tips">Suggestion:</view>
+        <view class="sug">{{suggestions.openness}}</view>
+      </view>
+      <view class="desc">
+        <view class="sug-catetory">Emotion</view>
+        <view class="sub-tips">Question:</view>
+        <view class="question">{{questions.emotion}}</view>
+        <view class="sub-tips">Answer:</view>
+        <view class="answer">{{features.emotion.desc}}</view>
+        <view class="sub-tips">Suggestion:</view>
+        <view class="sug">{{suggestions.emotion}}</view>
+      </view>
+      <view class="desc">
+        <view class="sug-catetory">Cooperation</view>
+        <view class="sub-tips">Question:</view>
+        <view class="question">{{questions.cooperation}}</view>
+        <view class="sub-tips">Answer:</view>
+        <view class="answer">{{features.cooperation.desc}}</view>
+        <view class="sub-tips">Suggestion:</view>
+        <view class="sug">{{suggestions.cooperation}}</view>
+      </view>
+      <view class="desc">
+        <view class="sug-catetory">Belief</view>
+        <view class="sub-tips">Question:</view>
+        <view class="question">{{questions.belief}}</view>
+        <view class="sub-tips">Answer:</view>
+        <view class="answer">{{features.belief.desc}}</view>
+        <view class="sub-tips">Suggestion:</view>
+        <view class="sug">{{suggestions.belief}}</view>
+      </view>
+      <view class="desc">
+        <view class="sug-catetory">Potential</view>
+        <view class="sub-tips">Question:</view>
+        <view class="question">{{questions.potential}}</view>
+        <view class="sub-tips">Answer:</view>
+        <view class="answer">{{features.potential.desc}}</view>
+        <view class="sub-tips">Suggestion:</view>
+        <view class="sug">{{suggestions.potential}}</view>
+      </view>
+    </view>
   </view>
 
 </view>

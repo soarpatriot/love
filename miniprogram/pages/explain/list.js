@@ -25,16 +25,22 @@ Page({
       // total_score:  result.total_score
 
       let features = {}
-      let suggestions = ""
+      let questions = {}
+      let suggestions = {}
       this.data.categories.forEach((key) => {
         const q = result.questions.find(element => element.category == key)
         features[key] = q.selected
-        suggestions += q.suggestion
+        questions[key] = q.desc
+        suggestions[key] = q.suggestion
       })
+      console.info(features)
+      console.info(questions)
+      console.info(suggestions)
 
       this.setData({
         totalScore: result.total_score,
         features: features,
+        questions: questions,
         suggestions: suggestions,
       })
 
