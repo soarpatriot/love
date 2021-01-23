@@ -15,7 +15,7 @@
   flex-direction: row;
   justify-content:flex-end;
 }
-.catetory, .total {
+.catetory, .total, .suggestion {
   padding-right: 30rpx;
   display: flex;
   font-size: 32rpx;

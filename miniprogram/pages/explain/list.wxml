@@ -29,8 +29,8 @@
         <progress class="ability" color="#003366" percent="{{features.potential.weight}}" active stroke-width="6" />
       </view>
     </view>
-    <view class="tips">Suggessions</view>
-    <view class="suggession">{{suggession}}</view>
+    <view class="tips">Suggestions</view>
+    <view class="suggestion">{{suggestions}}</view>
   </view>
 
 </view>

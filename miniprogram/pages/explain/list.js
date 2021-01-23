@@ -25,14 +25,17 @@ Page({
       // total_score:  result.total_score
 
       let features = {}
+      let suggestions = ""
       this.data.categories.forEach((key) => {
         const q = result.questions.find(element => element.category == key)
         features[key] = q.selected
+        suggestions += q.suggestion
       })
-      
+
       this.setData({
         totalScore: result.total_score,
         features: features,
+        suggestions: suggestions,
       })
 
       let selected = this.data.categories.map((value) => {
