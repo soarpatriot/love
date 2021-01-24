@@ -13,7 +13,7 @@
   </view> -->
 
   <view class="item">
-    <button style="width:240rpx;height: 32rpx;padding:2;" type="primary" bindtap="goToPage" plain="false">Start</button>
+    <button style="width:240rpx;" type="primary" bindtap="goToPage" plain="false">Start</button>
   </view>
 
   </view>

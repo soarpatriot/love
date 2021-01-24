@@ -48,3 +48,8 @@
   font-size: 32rpx;
   color: gray;
 }
+
+
+.sug {
+  color: #10AEFF;
+}

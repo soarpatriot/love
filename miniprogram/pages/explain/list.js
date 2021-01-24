@@ -31,7 +31,7 @@ Page({
         const q = result.questions.find(element => element.category == key)
         features[key] = q.selected
         questions[key] = q.desc
-        suggestions[key] = q.suggestion
+        suggestions[key] = q.selected.suggestion || q.suggestion
       })
       console.info(features)
       console.info(questions)
