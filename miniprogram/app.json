@@ -18,7 +18,8 @@
     "pages/explain/result",
     "pages/my/main",
     "pages/index/six",
-    "pages/explain/list"
+    "pages/explain/list",
+    "pages/my/journeys"
   ],
   "window": {
     "backgroundColor": "#F6F6F6",

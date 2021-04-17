@@ -1,0 +1,8 @@
+/* miniprogram/pages/my/journeys.wxss */
+
+.title {
+  padding: 20rpx 0;
+  font-size: 48rpx;
+  text-align: center;
+  background-color: #ffffff;
+}

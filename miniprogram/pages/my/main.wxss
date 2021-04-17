@@ -1,21 +1,24 @@
 /* miniprogram/pages/my/main.wxss */
 
 .avatar{
-  width: 128rpx;
-  height: 128rpx;
+  width: 108rpx;
+  height: 108rpx;
 }
 .nick-name {
-  margin-left: 20rpx;
+  margin-left: 30rpx;
 }
 .my-intro{
-  padding: 40rpx 20rpx;
+  padding: 40rpx 30rpx;
   display: flex;
   direction: row;
   align-items: center;
   margin-bottom: 20rpx;
+  background-color: #ffffff;
 }
 .item{
-  margin-left: 20rpx;
-  padding: 40rpx 0;
-  border-bottom: 2rpx solid #ffffff;
+
+  background-color: #ffffff;
+  margin-bottom: 2rpx;
+  padding: 30rpx 0 30rpx 30rpx;
+  /*border-bottom: 2rpx solid #ffffff;*/
 }

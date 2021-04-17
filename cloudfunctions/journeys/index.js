@@ -10,6 +10,9 @@ cloud.init({
 exports.main = async (event, context) => {
   console.log(event)
   switch (event.action) {
+    case 'my': {
+      return my(event.openid)
+    }
     case 'addJourney': {
       return addJourney(event.entity)
     }
@@ -26,9 +29,22 @@ exports.main = async (event, context) => {
 
 }
 
+
+async function my(openid) {
+  const db = cloud.database()
+  let{ APPID,OPENID} = cloud.getWXContext()
+  const result = await db.collection('journeys').where({
+    _openid: APPID,
+  }).get()
+  console.log("journeys: " + result)
+  return JSON.stringify(result)
+}
+
 async function addJourney(entity) {
   const db = cloud.database()
-  
+  let{ APPID,OPENID} = cloud.getWXContext()
+  console.log('openid:' + APPID)
+  entity._openid = APPID
   const j = await db.collection('journeys').add({
     data: entity
   })

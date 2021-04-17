@@ -11,10 +11,11 @@
     </view>
     
   </view>
+  
+    <navigator class="item" url="/pages/my/journeys?title=navigate" hover-class="navigator-hover">我的旅程</navigator>
+    
+
   <view class="item">
-    My Journeys
-  </view>
-  <view class="item">
-    About
+    关于
   </view>
 </view>

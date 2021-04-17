@@ -1,0 +1,9 @@
+<!--miniprogram/pages/my/journeys.wxml-->
+<text class="title">我的旅程</text>
+
+<view class="container padding-view">
+  <view class="list">
+    
+  </view>
+  
+</view>
