@@ -1,5 +1,0 @@
-/* miniprogram/pages/first/first.wxss */
-
-.desc {
-  padding: 20rpx;
-}

@@ -8,7 +8,7 @@ Page({
    * Page initial data
    */
   data: {
-
+    questions: []
   },
 
   /**
@@ -25,6 +25,10 @@ Page({
     }).then(res => {
       const result = JSON.parse(res.result)
       console.log(result)
+      this.setData({
+        journeys: result.data,
+        hidden: true
+      })
     })
   },
 

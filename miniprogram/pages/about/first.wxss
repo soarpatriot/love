@@ -1,0 +1,15 @@
+/* miniprogram/pages/first/first.wxss */
+
+
+
+.section{
+  margin-top: 4rpx;
+  padding: 15rpx 30rpx 15rpx 30rpx;
+  background-color: #fff;
+}
+
+.section .list{
+  margin-top: 20rpx;
+  color: #343A40;
+  font-size: 28rpx;
+}

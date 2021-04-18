@@ -1,9 +1,14 @@
 <!--miniprogram/pages/my/journeys.wxml-->
-<text class="title">我的旅程</text>
+
 
 <view class="container padding-view">
+  <text class="title">我的旅程</text>
+
   <view class="list">
-    
-  </view>
   
+    <navigator class="item" class="item" wx:key="_id" wx:for="{{journeys}}" url="/pages/explain/list?journey_id={{item._id}}" hover-class="navigator-hover">
+      {{index + 1}}. {{item.created_at}} 
+    </navigator>
+      
+  </view>
 </view>

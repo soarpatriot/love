@@ -6,3 +6,14 @@
   text-align: center;
   background-color: #ffffff;
 }
+
+.list {
+  margin-top: 30rpx;
+
+}
+
+.item{
+  background-color: #ffffff;
+  padding: 15rpx 15rpx 15rpx 30rpx;
+  margin-bottom: 2rpx;
+}

@@ -32,19 +32,20 @@ exports.main = async (event, context) => {
 
 async function my(openid) {
   const db = cloud.database()
-  let{ APPID,OPENID} = cloud.getWXContext()
+  let { OPENID} = cloud.getWXContext()
   const result = await db.collection('journeys').where({
-    _openid: APPID,
-  }).get()
+    _openid: OPENID,
+  }).orderBy('created_at', 'desc').get()
   console.log("journeys: " + result)
   return JSON.stringify(result)
 }
 
 async function addJourney(entity) {
   const db = cloud.database()
-  let{ APPID,OPENID} = cloud.getWXContext()
-  console.log('openid:' + APPID)
-  entity._openid = APPID
+  let { OPENID} = cloud.getWXContext()
+  console.log('openid:' + OPENID)
+  entity._openid = OPENID
+  entity.created_at = db.serverDate()
   const j = await db.collection('journeys').add({
     data: entity
   })

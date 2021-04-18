@@ -1,0 +1,108 @@
+<!--miniprogram/pages/first/first.wxml-->
+
+<view class="container">
+  <view class="title">
+    关于本应用
+  </view>
+
+  <view class="section">
+    <view class="desc">
+       出发点
+    </view>
+    <view class="list">
+      <view class="item">
+        本程序试图通过一些列测试，为你的另一半做一个评估，但是并不能保证完全准确评估一个人。仅供参考。本程序也并不能为你找到合适的另一半。
+        本应用试图找出哪些是非常不合适的，会给你热恋或生活中的你提供一个避坑参考。因为一个翻车的坑，足以毁掉你之前所有的高峰。闭坑，享受人生的”复利“，才能长久幸福。
+      </view>
+    </view>
+  </view>
+
+  <view class="section">
+    <view class="desc">
+      注意事项：为了测试更加准确
+    </view>
+    <view class="list">
+      <view class="item">
+        1. 观察回忆他/她的言行，四个维度，（她，他） 和你，父母，同级，上级（强于），下级（逊于）
+      </view>
+      <view class="item">
+        2. 回答问题前，尽量收集多的事例。以均值作为答案。（避难小样本偏差）
+      </view>
+    </view>
+  </view>
+
+
+
+  <view class="section">
+    <view class="desc">
+      测试依据，
+    </view>
+    <view class="list">
+      <view class="item">
+        一个人的性格和世界观在青少年阶段就形成了，如果不刻意去改变，绝大部分的人还是曾经那个少年，没有一丝丝改变。而改变不是一朝一夕的事情，大约一个小的改变周期就需要3～5年。
+      所以至少本测试在3～5年内有一定的参考价值。
+      </view>
+     
+    </view>
+  </view>
+
+  <view class="section">
+    <view class="desc">
+      参考依据：本测试主要依据如下书籍中提出的原理和方法。
+    </view>
+    <view class="list">
+      <view class="item">
+        1. 自卑与超越
+      </view>
+      <view class="item">
+        2. 思考的快于慢
+      </view>
+      <view class="item">
+        3. 关键对话
+      </view>
+      <view class="item">
+        4. 事实
+      </view>
+      <view class="item">
+        5. 反脆弱
+      </view>
+      <view class="item">
+        6. 贫穷的本质
+      </view>
+    </view>
+  </view>
+
+  <view class="section">
+    <view class="desc">
+      测试类别
+    </view>
+    <view class="list">
+      <view class="item">
+        1. 基本
+      </view>
+      <view class="item">
+        2. 相处
+      </view>
+      <view class="item">
+        3. 家庭
+      </view>
+      <view class="item">
+        4. 人品
+      </view>
+      <view class="item">
+        5. 世界观
+      </view>
+    </view>
+  </view>
+
+
+  <!--
+  <view class="desc">
+      <button type="primary" size="default" bindtap="goToPage" plain="false">开始探索之旅》</button>
+  </view>
+  -->
+
+
+
+</view>
+
