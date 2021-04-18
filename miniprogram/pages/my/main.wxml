@@ -14,5 +14,5 @@
   
   <navigator class="item" url="/pages/my/journeys?title=navigate" hover-class="navigator-hover">我的旅程</navigator>
   <navigator class="item" url="/pages/about/first?title=navigate" hover-class="navigator-hover">关于</navigator>
-
+  <navigator class="item" url="/pages/explain/pay?title=navigate" hover-class="navigator-hover">支付</navigator>
 </view>

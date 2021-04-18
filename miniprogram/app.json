@@ -19,7 +19,8 @@
     "pages/my/main",
     "pages/index/six",
     "pages/explain/list",
-    "pages/my/journeys"
+    "pages/my/journeys",
+    "pages/explain/pay"
   ],
   "window": {
     "backgroundColor": "#F6F6F6",
