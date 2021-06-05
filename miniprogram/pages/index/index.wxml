@@ -1,13 +1,23 @@
 <!--index.wxml-->
-<view class="container padding-view">
-  <view class="item logo-title">
+<view class="container">
+  <view class="heart">
     <image class="logo-image" src="../../images/love.png" mode="widthFix"></image>
   </view>
-  <view class="intro">
-    因为爱情 不会轻易悲伤所以一切都是幸福的模样。
-    因为爱情 怎么会有沧桑所以我们还是年轻的模样。
+  <view class="diaglog">
+    <view class="title">
+      爱的表白
+    </view>
+    <view>
+      因为爱情 不会轻易悲伤所以一切都是幸福的模样。
+    </view>
+    <view>
+      因为爱情 怎么会有沧桑所以我们还是年轻的模样。
+    </view>
   </view>
-  <view class="intro">
+  <view class="diaglog">
+    <view class="title">
+      爱的疑问
+    </view>
     <view>
       问：你爱我吗？   答： 爱
     </view>
@@ -19,16 +29,21 @@
       于是你陷入了沉思。
     </view>
   </view>
-  <view class="intro">
-    
+  
+  <view class="diaglog">
+    <view class="title">
+      爱的探索
+    </view>
+    <view>
+      一起探索她/他对你的爱有几分：
+    </view>
+    <view>
+      <button type="primary" bindtap="goToPage" plain="false">开始探索</button>
+    </view>
   </view>
 
-  <!-- <view class="item">
+  <view class="btn-area">
     
-  </view> -->
-
-  <view class="item">
-    <button type="primary" bindtap="goToPage" plain="false">开始探索</button>
   </view>
 
 </view>

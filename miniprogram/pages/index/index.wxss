@@ -14,8 +14,10 @@ page {
   width: 100%;
 }
 
-.container {
-  height: 100%;
+
+.heart{
+  padding: 40rpx;
+  background-color: #ffffff;
   display: flex;
   flex-direction:column;
   justify-content:space-around;
@@ -26,7 +28,7 @@ page {
   display: flex;
   flex-direction:column;
   justify-content:space-between;
-
+  
 }
 
 .logo-image {
@@ -34,9 +36,27 @@ page {
 }
 
 .intro {
+  margin-top: 30rpx;
   padding: 30rpx 30rpx 60rpx 30rpx;
   font-size: 32rpx;
   background-color: #ffffff;
+}
+
+.diaglog {
+  color: #343A40;
+  margin-top: 30rpx;
+  padding: 30rpx 30rpx 60rpx 30rpx;
+  font-size: 32rpx;
+  background-color: #ffffff;
+}
+
+.diaglog .title {
+  font-size: 32rpx;
+  text-align: center;
+}
+
+.btn-area {
+  padding: 40rpx;
 }
 .desc-text {
   font-size: medium;
