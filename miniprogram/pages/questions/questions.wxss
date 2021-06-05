@@ -25,11 +25,10 @@
   width: 100%;
 }
 .questions {
-  color: #222222;
   display: block;
   padding: 30rpx 30rpx 0 30rpx;
   background-color: #ffffff;
-  margin-bottom: 30rpx;
+  margin-bottom: 20rpx;
 }
 .options{
   display: flex;
@@ -40,7 +39,9 @@
 }
 
 .options-desc {
-  color: #353535;
+  
+  color: #343A40;
+  font-size: 32rpx;
   padding-bottom: 20rpx;
   border-bottom: 1rpx solid #E7E6E6;
 }

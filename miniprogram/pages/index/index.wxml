@@ -1,11 +1,26 @@
 <!--index.wxml-->
-<view class="container">
-  <!-- <view class="title">
-      Explorer yourself
-  </view> -->
+<view class="container padding-view">
   <view class="item logo-title">
-    <image class="logo-image" src="../../images/test.png" mode="widthFix"></image>
-    <text class="desc-text">Better Yourself</text>
+    <image class="logo-image" src="../../images/love.png" mode="widthFix"></image>
+  </view>
+  <view class="intro">
+    因为爱情 不会轻易悲伤所以一切都是幸福的模样。
+    因为爱情 怎么会有沧桑所以我们还是年轻的模样。
+  </view>
+  <view class="intro">
+    <view>
+      问：你爱我吗？   答： 爱
+    </view>
+    <view>
+      问：有多爱？     答： (莎士比亚附体) more than yesterday, less than tomorrow
+    </view>
+    <view>
+      "舒哥拉低" 发问： 爱究竟有几分？
+      于是你陷入了沉思。
+    </view>
+  </view>
+  <view class="intro">
+    
   </view>
 
   <!-- <view class="item">
@@ -13,10 +28,11 @@
   </view> -->
 
   <view class="item">
-    <button style="width:240rpx;" type="primary" bindtap="goToPage" plain="false">Start</button>
+    <button type="primary" bindtap="goToPage" plain="false">开始探索</button>
   </view>
 
-  </view>
+</view>
+  
    
     <!-- <view class="intro-item">
       <text>a few of questions to dive into your heart!</text>

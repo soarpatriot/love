@@ -1,7 +1,7 @@
 
 <view class="container padding-view">
-  <view class="title">Re recognize yourself</view>
-  <view class="intro-section">Please take these questions seriously, it will help to know yourself more than before.</view>
+  <view class="title">评估</view>
+  <view class="intro-section">请仔细思考，回答如下问题.</view>
   <loading hidden="{{hidden}}" bindchange="loadingChange">
     加载中...
   </loading>
