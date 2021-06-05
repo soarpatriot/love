@@ -7,7 +7,8 @@ Page({
     userInfo: {},
     logged: false,
     takeSession: false,
-    requestResult: ''
+    requestResult: '',
+    description: ''
   },
 
   goToPage: function() {
@@ -19,9 +20,18 @@ Page({
   },
 
   onLoad: async function (options) {
-    app.globalData.openid = app.globalData.openid ||
-      (await wx.cloud.callFunction({name:'login'})).result.openid
-    console.log(app.globalData.openid)
+    wx.cloud.callFunction({
+      name: 'lyric',
+    }).then(res => {
+      const data = JSON.parse(res.result)
+      this.setData({
+        description: data.list[0].description
+      })
+      
+    })
+    .catch(e => {
+      console.error('[云函数] [login] 调用失败', e)
+    })
   },
   // onLoad: function() {
   //   if (!wx.cloud) {

@@ -8,10 +8,10 @@
       爱的表白
     </view>
     <view>
-      因为爱情 不会轻易悲伤所以一切都是幸福的模样。
+      {{description}}
     </view>
     <view>
-      因为爱情 怎么会有沧桑所以我们还是年轻的模样。
+      
     </view>
   </view>
   <view class="diaglog">
