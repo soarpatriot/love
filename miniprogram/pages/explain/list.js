@@ -7,6 +7,9 @@ Page({
     animationData: {},
     categories: ['openness', 'emotion', 'cooperation', 'belief', 'potential']
   },
+  onShow: function () {
+    wx.hideHomeButton()
+  },
   onLoad: function (options) {
     const journey_id = options.journey_id
     // console.log("journey_id: " + journey_id)

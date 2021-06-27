@@ -97,7 +97,7 @@ Page({
       console.info(JSON.parse(res.result))
       
       const url = "/pages/explain/list?journey_id=" + data._id
-      wx.navigateTo({
+      wx.redirectTo({
         url: url,
       })
     })
