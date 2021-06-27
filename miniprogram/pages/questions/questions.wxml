@@ -22,4 +22,12 @@
         <button type="primary" formType="submit">提交</button>
     </view>
   </form>
+
+
+
 </view>
+
+<!--
+<mp-tabbar class="tabbar" list="{{list}}"  bindchange="tabChange">
+</mp-tabbar>
+-->

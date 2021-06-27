@@ -20,7 +20,8 @@
     "pages/index/six",
     "pages/explain/list",
     "pages/my/journeys",
-    "pages/explain/pay"
+    "pages/explain/pay",
+    "custom-tab-bar/index"
   ],
   "window": {
     "backgroundColor": "#F6F6F6",
@@ -30,6 +31,7 @@
     "navigationBarTextStyle": "black"
   },
   "tabBar": {
+    "custom": true,
     "color": "#7A7E83",
     "selectedColor": "#1296db",
     "borderStyle": "black",
@@ -48,6 +50,9 @@
         "text": "我的"
       }
     ]
+  },
+  "usingComponents": {
+    "mp-tabbar": "weui-miniprogram/tabbar/tabbar"
   },
   "useExtendedLib": {
     "kbone": true,

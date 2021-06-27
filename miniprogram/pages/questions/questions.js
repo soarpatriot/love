@@ -1,4 +1,5 @@
 // miniprogram/pages/questions.js
+const app = getApp();
 Page({
 
   /**
@@ -8,7 +9,8 @@ Page({
   data: {
     hidden: false,
     catetroies: ['openness', 'emotion', 'cooperation', 'belief', 'potential'],
-    questions: []
+    questions: [],
+    list: app.globalData.tablist
   },
 
   /**
@@ -169,5 +171,17 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+
+  tabChange: function(e) {
+    var index = e.detail.index
+    console.log(index)
+    console.log(e)
+    // my
+    if (index == 1) {
+      wx.navigateTo({
+        url: '/pages/my/main',
+      })
+    }
   }
 })
