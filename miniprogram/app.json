@@ -31,7 +31,6 @@
     "navigationBarTextStyle": "black"
   },
   "tabBar": {
-    "custom": true,
     "color": "#7A7E83",
     "selectedColor": "#1296db",
     "borderStyle": "black",
@@ -51,9 +50,7 @@
       }
     ]
   },
-  "usingComponents": {
-    "mp-tabbar": "weui-miniprogram/tabbar/tabbar"
-  },
+
   "useExtendedLib": {
     "kbone": true,
     "weui": true
