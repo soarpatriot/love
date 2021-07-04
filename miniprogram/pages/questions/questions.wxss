@@ -16,7 +16,7 @@
 
 
 .question-form{
-  margin-bottom: 40rpx;
+  
 }
 
 .group {
@@ -46,8 +46,9 @@
   border-bottom: 1rpx solid #E7E6E6;
 }
 .btn-area {
+  background-color: #ffffff;
   display: flex;
-  padding: 10rpx 0;
+  padding: 20rpx 0 80rpx 0;
   flex-direction: row;
   justify-content: center;
 }

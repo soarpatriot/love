@@ -56,7 +56,7 @@ page {
 }
 
 .btn-area {
-  padding: 40rpx;
+  padding-top: 60rpx;
 }
 .desc-text {
   font-size: medium;

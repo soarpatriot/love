@@ -37,14 +37,12 @@
     <view>
       一起探索她/他对你的爱有几分：
     </view>
-    <view>
+    <view class="btn-area">
       <button type="primary" bindtap="goToPage" plain="false">开始探索</button>
     </view>
   </view>
 
-  <view class="btn-area">
-    
-  </view>
+
 
 </view>
   
