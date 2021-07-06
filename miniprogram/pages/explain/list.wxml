@@ -10,7 +10,7 @@
     <view class="comprohesive">
       <view class="progress-box">
         <view class="catetory">Openness</view>
-        <progress class="ability" color="#99ff33" percent="{{features.openness.weight}}" active stroke-width="6" />
+        <progress class="ability" color="#99ff33" percent="{{features.love.weight}}" active stroke-width="6" />
       </view>
       <view class="progress-box">
         <view class="catetory">Emotion</view>
@@ -18,7 +18,7 @@
       </view>
       <view class="progress-box">
         <view class="catetory">Cooperation</view>
-        <progress class="ability" color="#10AEFF" percent="{{features.cooperation.weight}}" active stroke-width="6" />
+        <progress class="ability" color="#10AEFF" percent="{{features.potential.weight}}" active stroke-width="6" />
       </view>
       <view class="progress-box">
         <view class="catetory">Belief</view>
@@ -26,7 +26,7 @@
       </view>
       <view class="progress-box">
         <view class="catetory">Potential</view>
-        <progress class="ability" color="#003366" percent="{{features.potential.weight}}" active stroke-width="6" />
+        <progress class="ability" color="#003366" percent="{{features.life.weight}}" active stroke-width="6" />
       </view>
     </view>
     <view class="tips">Anaysis</view>

@@ -8,7 +8,7 @@ cloud.init({
 
 // 云函数入口函数
 exports.main = async (event, context) => {
-  const categories = ['openness', 'emotion', 'cooperation', 'belief', 'potential']
+  const categories = ['love', 'emotion', 'potential','belief','life' ]
 
   qsPromises = categories.map((c) => getSampleQuestion(c))
 

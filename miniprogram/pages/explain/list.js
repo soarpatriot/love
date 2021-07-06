@@ -5,10 +5,11 @@ let ploy = require('../../libs/ploy.js')
 Page({
   data: {
     animationData: {},
-    categories: ['openness', 'emotion', 'cooperation', 'belief', 'potential']
+    categories: ['emotion', 'potential','belief','life','love' ],
+    texts: [ '情绪', '潜力','世界观','生活', '爱']
   },
   onShow: function () {
-    wx.hideHomeButton()
+    
   },
   onLoad: function (options) {
     const journey_id = options.journey_id
@@ -49,15 +50,16 @@ Page({
 
       let selected = this.data.categories.map((value) => {
         const q = result.questions.find(element => element.category == value)
-        console.log("q" + q)
+
         return q.selected
       })
       
+      console.info("mdata:" )
       console.info(selected)
       this.init(selected);
     })
     .catch(e => {
-      console.error('[云函数]fff [login] 调用失败', e)
+      console.error('explain list: ', e)
     })
   
   },
@@ -160,7 +162,7 @@ Page({
     this.drawText(
       ctx,
       lCoordinates,
-      mData,
+      this.data.texts,
       32 / ploy.getRatio(windowWidth), //26rpx
       "#0000cc"
     );
@@ -326,7 +328,7 @@ Page({
           ctx.setTextBaseline("middle");
           x += moveDistance;
         }
-        ctx.fillText(mData[index].category, x, y);
+        ctx.fillText(mData[index], x, y);
       }
     });
   },

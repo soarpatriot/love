@@ -8,7 +8,7 @@ Page({
    */
   data: {
     hidden: false,
-    catetroies: ['openness', 'emotion', 'cooperation', 'belief', 'potential'],
+    catetroies: ['love', 'emotion', 'potential','belief','life' ],
     questions: [],
     list: app.globalData.tablist
   },
