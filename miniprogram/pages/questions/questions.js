@@ -1,5 +1,8 @@
 // miniprogram/pages/questions.js
+let utils = require('../../libs/utils.js')
+
 const app = getApp();
+
 Page({
 
   /**
@@ -8,9 +11,8 @@ Page({
    */
   data: {
     hidden: false,
-    catetroies: ['love', 'emotion', 'potential','belief','life' ],
-    questions: [],
-    list: app.globalData.tablist
+    catetroies: utils.categories,
+    questions: []
   },
 
   /**
@@ -29,22 +31,12 @@ Page({
         })
       },
       fail: err => {
-        console.error('[云函数] [login] 调用失败', err)
+        console.error('[云函数] [fetch question] 调用失败', err)
         this.setData({
           hidden: true
         })
       }
     })
-    // const db = wx.cloud.database({env: 'test-3glvzxwge4dbbb17'})
-    // db.collection('questions').aggregate()
-    //   .lookup({
-    //     from: 'answers',
-    //     localField: '_id',
-    //     foreignField: 'question_id',
-    //     as: 'answers'
-    //   }).end()
-    //   .then(res => console.log(res.data))
-    //   .catch(err => console.error(err))
   },
 
   formSubmit(e) {
@@ -53,6 +45,8 @@ Page({
     let journey = {}
     let answers = []
     //console.log('form发生了submit事件，携带数据为：', values)
+
+
     const categories = this.data.catetroies
     
     categories.forEach((e) => {
@@ -62,15 +56,11 @@ Page({
         q_id: values[`${e}_${q_id}`],
         a_id: values[`${e}_${a_id}`]
       }
-      //journey = 
-      //journey[e] = null
-      //console.log('qqq', values[`${e}_${q_id}`])
-      //console.log('aaa', values[`${e}_${a_id}`])
+
       if(values[`${e}_${a_id}`] == '') {
         blank = true
       }
       answers.push(answer)
-      //journey[e][a_id] = ''
     })
 
     // blanks = values.filter((v) => { v === ''})
@@ -102,86 +92,10 @@ Page({
       })
     })
     .catch(e => {
-      console.error('[云函数] [login] 调用失败', e)
+      console.error('add journey', e)
     })
 
-    // db.collection('journeys').add({
-    //   data: journey,
-    //   success: function(res) {
-    //     // res 是一个对象，其中有 _id 字段标记刚创建的记录的 id
-    //     console.log(res)
 
-    //     const url = "/pages/explain/result" 
- 
-    //     wx.navigateTo({
-    //       url: url,
-    //     })
-    //   },
-    //   fail: err => {
-    //     console.error('save 调用失败', err)
-    //   }
-    // })
-    
-
-  },
-  /**
-   * Lifecycle function--Called when page is initially rendered
-   */
-  onReady: function () {
-
-  },
-
-  /**
-   * Lifecycle function--Called when page show
-   */
-  onShow: function () {
-
-  },
-
-  /**
-   * Lifecycle function--Called when page hide
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * Lifecycle function--Called when page unload
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * Page event handler function--Called when user drop down
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * Called when page reach bottom
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * Called when user click on the top right corner to share
-   */
-  onShareAppMessage: function () {
-
-  },
-
-  tabChange: function(e) {
-    var index = e.detail.index
-    console.log(index)
-    console.log(e)
-    // my
-    if (index == 1) {
-      wx.navigateTo({
-        url: '/pages/my/main',
-      })
-    }
   }
+  
 })
