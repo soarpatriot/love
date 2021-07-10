@@ -4,78 +4,31 @@
     <canvas canvas-id="canvas" class="canvas" style="width: 100%; height: 600rpx;background:#fff;;"/>
   </view>
   <view class="analysis">
-    <view class="tips">Comprehensiveness</view>
-    <view class="total">Total Score: {{totalScore}}</view>
-    <view class="tips">Describes</view>
+    <view class="tips">综合分析</view>
+    <view class="total">总分: {{journey.totalScore}}</view>
+    <view class="tips">单项分析</view>
     <view class="comprohesive">
-      <view class="progress-box">
-        <view class="catetory">Openness</view>
-        <progress class="ability" color="#99ff33" percent="{{features.love.weight}}" active stroke-width="6" />
+      <view class="desc" wx:key="_id" wx:for="{{journey.questions}}">
+        <view class="progress-box">
+          <view class="catetory">{{item.name}}</view>
+          <progress class="ability" color="#99ff33" percent="{{item.selected.weight}}" active stroke-width="6" />
+        </view>
       </view>
-      <view class="progress-box">
-        <view class="catetory">Emotion</view>
-        <progress class="ability" color="#FF6A6A" percent="{{features.emotion.weight}}" active stroke-width="6" />
-      </view>
-      <view class="progress-box">
-        <view class="catetory">Cooperation</view>
-        <progress class="ability" color="#10AEFF" percent="{{features.potential.weight}}" active stroke-width="6" />
-      </view>
-      <view class="progress-box">
-        <view class="catetory">Belief</view>
-        <progress class="ability" color="#FFB90F" percent="{{features.belief.weight}}" active stroke-width="6" />
-      </view>
-      <view class="progress-box">
-        <view class="catetory">Potential</view>
-        <progress class="ability" color="#003366" percent="{{features.life.weight}}" active stroke-width="6" />
-      </view>
+      
     </view>
-    <view class="tips">Anaysis</view>
+    <view class="tips">分析</view>
     <view class="suggestion">
-      <view class="desc">
-        <view class="sug-catetory">Openness</view>
-        <view class="sub-tips">Question:</view>
-        <view class="question">{{questions.openness}}</view>
-        <view class="sub-tips">Answer:</view>
-        <view class="answer">{{features.openness.desc}}</view>
-        <view class="sub-tips">Suggestion:</view>
-        <view class="sug">{{suggestions.openness}}</view>
+      <view class="desc" wx:key="_id" wx:for="{{journey.questions}}">
+        <view class="sug-catetory">{{item.name}}</view>
+        <view class="sub-tips">问题:</view>
+        <view class="question">{{item.desc}}</view>
+        <view class="sub-tips">回答:</view>
+        <view class="answer">{{item.selected.desc}}</view>
+        <view class="sub-tips">建议:</view>
+        <view class="sug">{{item.suggestion || item.selected.suggestion}}</view>
       </view>
-      <view class="desc">
-        <view class="sug-catetory">Emotion</view>
-        <view class="sub-tips">Question:</view>
-        <view class="question">{{questions.emotion}}</view>
-        <view class="sub-tips">Answer:</view>
-        <view class="answer">{{features.emotion.desc}}</view>
-        <view class="sub-tips">Suggestion:</view>
-        <view class="sug">{{suggestions.emotion}}</view>
-      </view>
-      <view class="desc">
-        <view class="sug-catetory">Cooperation</view>
-        <view class="sub-tips">Question:</view>
-        <view class="question">{{questions.cooperation}}</view>
-        <view class="sub-tips">Answer:</view>
-        <view class="answer">{{features.cooperation.desc}}</view>
-        <view class="sub-tips">Suggestion:</view>
-        <view class="sug">{{suggestions.cooperation}}</view>
-      </view>
-      <view class="desc">
-        <view class="sug-catetory">Belief</view>
-        <view class="sub-tips">Question:</view>
-        <view class="question">{{questions.belief}}</view>
-        <view class="sub-tips">Answer:</view>
-        <view class="answer">{{features.belief.desc}}</view>
-        <view class="sub-tips">Suggestion:</view>
-        <view class="sug">{{suggestions.belief}}</view>
-      </view>
-      <view class="desc">
-        <view class="sug-catetory">Potential</view>
-        <view class="sub-tips">Question:</view>
-        <view class="question">{{questions.potential}}</view>
-        <view class="sub-tips">Answer:</view>
-        <view class="answer">{{features.potential.desc}}</view>
-        <view class="sub-tips">Suggestion:</view>
-        <view class="sug">{{suggestions.potential}}</view>
-      </view>
+
+     
     </view>
   </view>
 

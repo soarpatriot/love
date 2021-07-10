@@ -5,6 +5,7 @@ let ploy = require('../../libs/ploy.js')
 Page({
   data: {
     animationData: {},
+    journey: [],
     categories: ['emotion', 'potential','belief','life','love' ],
     texts: [ '情绪', '潜力','世界观','生活', '爱']
   },
@@ -13,9 +14,6 @@ Page({
   },
   onLoad: function (options) {
     const journey_id = options.journey_id
-    // console.log("journey_id: " + journey_id)
-    let journeyData = []
-
     
     wx.cloud.callFunction({
       name: 'journeys',
@@ -24,10 +22,10 @@ Page({
         id: journey_id}
     }).then(res => {
       const result = JSON.parse(res.result)
-      
-      console.info(result)
-      // total_score:  result.total_score
-
+      this.setData({
+        journey: result
+      })
+      console.log(result)
       let features = {}
       let questions = {}
       let suggestions = {}
@@ -37,9 +35,9 @@ Page({
         questions[key] = q.desc
         suggestions[key] = q.selected.suggestion || q.suggestion
       })
-      console.info(features)
-      console.info(questions)
-      console.info(suggestions)
+      //console.info(features)
+      //console.info(questions)
+      //console.info(suggestions)
 
       this.setData({
         totalScore: result.total_score,
@@ -50,7 +48,6 @@ Page({
 
       let selected = this.data.categories.map((value) => {
         const q = result.questions.find(element => element.category == value)
-
         return q.selected
       })
       
