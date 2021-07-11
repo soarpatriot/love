@@ -8,13 +8,8 @@ function  drawText(ctx, ratio, coordinates, mData, fontSize) {
     const moveDistance = 15 / ratio;
     ctx.setFontSize(fontSize);
     
-    console.log("coordinates: " + coordinates.length)
+    //console.log("coordinates: " + coordinates.length)
     coordinates.forEach((coordinate, index) => {
-      
-      console.log('mdata::')
-      
-      ctx.setFillStyle('#51cb5d');
-      //console.log(mData[index]['color']);
       if (mData[index]) {
         console.log(mData[index]['color'])
         ctx.setFillStyle(mData[index]['color']);
