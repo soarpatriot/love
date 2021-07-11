@@ -16,7 +16,7 @@ App({
     let tablist = [{
       "text": "对话",
       "iconPath": "/images/home-static.png",
-      "selectedIconPath": "/images/home-active.png"
+      "selectedIconPath": "/images/home.png"
     },
     {
       "text": "设置",

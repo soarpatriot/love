@@ -1,7 +1,7 @@
 <!--index.wxml-->
 <view class="container">
   <view class="heart">
-    <image class="logo-image" src="../../images/love.png" mode="widthFix"></image>
+    <image class="logo-image" src="../../images/love-new.png" mode="widthFix"></image>
   </view>
   <view class="diaglog">
     <view class="title">
