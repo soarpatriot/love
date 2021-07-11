@@ -5,20 +5,20 @@
   </view>
   <view class="analysis">
     <view class="tips">综合分析</view>
-    <view class="total">总分: {{journey.totalScore}}</view>
+    <view class="total">总分: {{totalScore}}</view>
     <view class="tips">单项分析</view>
     <view class="comprohesive">
-      <view class="desc" wx:key="_id" wx:for="{{journey.questions}}">
+      <view class="desc" wx:key="_id" wx:for="{{analysisItems}}">
         <view class="progress-box">
           <view class="catetory">{{item.name}}</view>
-          <progress class="ability" color="#99ff33" percent="{{item.selected.weight}}" active stroke-width="6" />
+          <progress class="ability" color="{{item.color}}" percent="{{item.weight}}" active stroke-width="6" />
         </view>
       </view>
       
     </view>
     <view class="tips">分析</view>
     <view class="suggestion">
-      <view class="desc" wx:key="_id" wx:for="{{journey.questions}}">
+      <view class="desc" wx:key="_id" wx:for="{{questions}}">
         <view class="sug-catetory">{{item.name}}</view>
         <view class="sub-tips">问题:</view>
         <view class="question">{{item.desc}}</view>

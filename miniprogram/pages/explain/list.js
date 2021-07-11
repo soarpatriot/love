@@ -6,9 +6,9 @@ let utils = require('../../libs/utils.js')
 Page({
   data: {
     animationData: {},
-    journey: [],
-    categories: utils.categories
-
+    questions: [],
+    analysisItems: [],
+    totalScore: 0
   },
   onShow: function () {
     
@@ -23,33 +23,41 @@ Page({
         id: journey_id}
     }).then(res => {
       const result = JSON.parse(res.result)
-      this.setData({
-        journey: result
-      })
-      console.log(result)
-
       let allQuestions = []
-      utils.categories.forEach((category) => {
-        console.log(category)
+      utils.categories.forEach((cate) => {
         let ques = result.questions.filter((q) => { 
-          return q.category == category
+          return q.category == cate.key
         })
         allQuestions = allQuestions.concat(ques)
       })
-      console.log('all:')
-      console.log(allQuestions)
+      this.setData({
+        questions: allQuestions,
+        totalScore: result.total_score
+      })
+
+      
       //rader data
       const selected = allQuestions.map((q) => {
         return q.selected
       })
-      //rader text
-      const catetoryNames = allQuestions.map((q) => {
-        return q.name
+
+      const analysisItems = allQuestions.map((q) => {
+        let cateData = utils.categories.find(cate =>  q.category == cate.key)
+        return { weight: q.selected.weight, name: q.name, color: cateData.color }
+      })
+      console.log('analysisItems: ' + JSON.stringify(analysisItems))
+      this.setData({
+        analysisItems: analysisItems
       })
 
-      console.info("mdata:" )
-      console.info(selected)
-      this.init(selected, catetoryNames);
+      //rader text
+      const cateData = allQuestions.map((q) => {
+        let category = utils.categories.find(cate =>  q.category == cate.key)
+        return { name: q.name, color: category.color}
+      })
+      console.log("category data: ");
+      console.log(selected.length);
+      this.init(selected, cateData);
     })
     .catch(e => {
       console.error('explain list: ', e)
@@ -64,7 +72,7 @@ Page({
     return ratio;
   },
  
-  init(mData, catetoryNames) {
+  init(mData, cateData) {
     const L_RADIUS = 200 / this.getRatio(); // 大圆半径
     const LINE_WIDTH = 2 / this.getRatio(); //线宽
     const ctx = wx.createCanvasContext("canvas");
@@ -93,7 +101,7 @@ Page({
     //绘制文字
     const systemInfo = wx.getSystemInfoSync()
     const windowWidth = systemInfo.windowWidth
-    ploy.drawText(ctx, this.getRatio(), lCoordinates, catetoryNames, 32 / ploy.getRatio(windowWidth), "#0000cc");
+    ploy.drawText(ctx, this.getRatio(), lCoordinates, cateData, 32 / ploy.getRatio(windowWidth));
     ploy.drawRadar(ctx, mData, L_RADIUS, -rotateAngle);
     ctx.draw();
   }

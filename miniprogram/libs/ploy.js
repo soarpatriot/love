@@ -1,5 +1,5 @@
 
-function  drawText(ctx, ratio, coordinates, mData, fontSize, color) {
+function  drawText(ctx, ratio, coordinates, mData, fontSize) {
     const yArr = coordinates.map(coordinate => {
       return coordinate[1];
     });
@@ -7,10 +7,17 @@ function  drawText(ctx, ratio, coordinates, mData, fontSize, color) {
     const minY = Math.min(...yArr); // 最低点
     const moveDistance = 15 / ratio;
     ctx.setFontSize(fontSize);
-    ctx.setFillStyle(color);
-    console.log("coordinates: " + coordinates)
+    
+    console.log("coordinates: " + coordinates.length)
     coordinates.forEach((coordinate, index) => {
+      
+      console.log('mdata::')
+      
+      ctx.setFillStyle('#51cb5d');
+      //console.log(mData[index]['color']);
       if (mData[index]) {
+        console.log(mData[index]['color'])
+        ctx.setFillStyle(mData[index]['color']);
         let x = coordinate[0];
         let y = coordinate[1];
         if (maxY == coordinate[1]) {
@@ -30,7 +37,7 @@ function  drawText(ctx, ratio, coordinates, mData, fontSize, color) {
           ctx.setTextBaseline("middle");
           x += moveDistance;
         }
-        ctx.fillText(mData[index], x, y);
+        ctx.fillText(mData[index]['name'], x, y);
       }
     });
   }
