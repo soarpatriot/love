@@ -36,10 +36,17 @@
 
 .sug-catetory {
   font-size: 32rpx;
+  
   color: rgb(46, 46, 46);
 }
 
 .sub-tips {
+  font-size: 32rpx;
+  color: rgb(77, 77, 77);
+}
+
+.suggestion-item {
+  text-decoration: green wavy underline;
   font-size: 32rpx;
   color: rgb(77, 77, 77);
 }
@@ -51,5 +58,5 @@
 
 
 .sug {
-  color: #10AEFF;
+  color: hsl(140, 100%, 53%);
 }

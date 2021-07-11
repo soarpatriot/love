@@ -11,7 +11,6 @@ function  drawText(ctx, ratio, coordinates, mData, fontSize) {
     //console.log("coordinates: " + coordinates.length)
     coordinates.forEach((coordinate, index) => {
       if (mData[index]) {
-        console.log(mData[index]['color'])
         ctx.setFillStyle(mData[index]['color']);
         let x = coordinate[0];
         let y = coordinate[1];

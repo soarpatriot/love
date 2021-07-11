@@ -45,7 +45,7 @@ Page({
         let cateData = utils.categories.find(cate =>  q.category == cate.key)
         return { weight: q.selected.weight, name: q.name, color: cateData.color }
       })
-      console.log('analysisItems: ' + JSON.stringify(analysisItems))
+      
       this.setData({
         analysisItems: analysisItems
       })
@@ -55,8 +55,7 @@ Page({
         let category = utils.categories.find(cate =>  q.category == cate.key)
         return { name: q.name, color: category.color}
       })
-      console.log("category data: ");
-      console.log(selected.length);
+
       this.init(selected, cateData);
     })
     .catch(e => {
