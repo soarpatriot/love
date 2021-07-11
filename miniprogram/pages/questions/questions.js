@@ -53,11 +53,11 @@ Page({
       const q_id = 'question_id'
       const a_id = 'answer_id'
       let answer = {
-        q_id: values[`${e}_${q_id}`],
-        a_id: values[`${e}_${a_id}`]
+        q_id: values[`${e.key}_${q_id}`],
+        a_id: values[`${e.key}_${a_id}`]
       }
 
-      if(values[`${e}_${a_id}`] == '') {
+      if(values[`${e.key}_${a_id}`] == '') {
         blank = true
       }
       answers.push(answer)
