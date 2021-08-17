@@ -60,3 +60,20 @@
 .sug {
   color: #00aeef;
 }
+
+.emotion{
+  color: #51cb5d;
+}
+.potential {
+  color: #170406;
+}
+
+.belief {
+  color: #2587be;
+}
+.love {
+  color: #FF6670;
+}
+.life {
+  color: #6c25be;
+}

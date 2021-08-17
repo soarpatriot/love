@@ -19,7 +19,7 @@
     <view class="tips">分析</view>
     <view class="suggestion">
       <view class="desc" wx:key="_id" wx:for="{{questions}}">
-        <view class="sug-catetory">{{item.name}}</view>
+        <view class="sug-catetory {{item.category}}">{{item.name}}</view>
         <view class="sub-tips">问题:</view>
         <view class="question">{{item.desc}}</view>
         <view class="sub-tips">回答:</view>
