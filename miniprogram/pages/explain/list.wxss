@@ -58,5 +58,5 @@
 
 
 .sug {
-  color: hsl(140, 100%, 53%);
+  color: #00aeef;
 }

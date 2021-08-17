@@ -24,7 +24,7 @@
         <view class="question">{{item.desc}}</view>
         <view class="sub-tips">回答:</view>
         <view class="answer">{{item.selected.desc}}</view>
-        <view class="suggestion-item">建议:</view>
+        <view class="suggestion-item">提示:</view>
         <view class="sug">{{item.suggestion || item.selected.suggestion}}</view>
       </view>
 
