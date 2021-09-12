@@ -15,13 +15,13 @@ Page({
    * Lifecycle function--Called when page load
    */
   onLoad: function (options) {
-    const openid = app.globalData.openid
-    console.log(openid)
+    //const openid = app.globalData.openid
+
     wx.cloud.callFunction({
       name: 'journeys',
       data: {
         action: 'my',
-        openid: openid}
+      }
     }).then(res => {
       const result = JSON.parse(res.result)
       console.log(result)

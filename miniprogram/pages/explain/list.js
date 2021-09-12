@@ -23,7 +23,6 @@ Page({
         id: journey_id}
     }).then(res => {
       const result = JSON.parse(res.result)
-      console.log(result)
       let allQuestions = []
       utils.categories.forEach((cate) => {
         let ques = result.questions.filter((q) => { 
@@ -68,7 +67,7 @@ Page({
   getRatio() {
     let systemInfo = wx.getSystemInfoSync();
     let ratio = 750 / systemInfo.windowWidth; // rpx/px比例
-    console.log(systemInfo.windowWidth)
+    //console.log(systemInfo.windowWidth)
     return ratio;
   },
  
