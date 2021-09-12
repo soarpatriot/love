@@ -14,7 +14,7 @@ exports.main = async (event, context) => {
 
   const resObjs = await Promise.all(qsPromises)
   const resArr = resObjs.map((r) => r.list)
-
+  console.log(resArr)
   const arr = resArr.reduce((a, b) => [...a, ...b], []);
 
   console.log(arr)
@@ -39,12 +39,6 @@ function getSampleQuestion(category) {
   .match({category:category})
   .sample({
     size:1
-  })
-  .lookup({
-    from: 'answers',
-    localField: '_id',
-    foreignField: 'question_id',
-    as: 'answers'
   }).end()
 
 

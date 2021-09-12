@@ -8,8 +8,8 @@
   <form class="question-form" catchsubmit="formSubmit" hidden="{{!hidden}}" catchreset="formReset">
     <view class="questions" wx:key="_id" wx:for="{{questions}}"> 
       {{index + 1}}. {{item.desc}} 
-      <input hidden="true" name="{{item.category}}_question_id" value="{{item._id}}"/>
-      <radio-group class="radio-group" name="{{item.category}}_answer_id" class="group" bindchange="radioChange">
+      
+      <radio-group class="radio-group" name="{{item._id}}_answer_id" class="group" bindchange="radioChange">
           <label class="options" wx:for="{{item.answers}}" wx:key="_id">
             <view class="options-radio">
               <radio value="{{item._id}}"/>

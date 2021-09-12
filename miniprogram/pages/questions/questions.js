@@ -40,31 +40,15 @@ Page({
   },
 
   formSubmit(e) {
-    const values = e.detail.value
-    let blank = false
-    let journey = {}
-    let answers = []
-    //console.log('form发生了submit事件，携带数据为：', values)
+    const formData = e.detail.value
 
-
-    const categories = this.data.catetroies
+    const answers = Object.values(formData)
+    const valueBlank = (element) => element === "";
+    const isBlank = answers.some(valueBlank)
     
-    categories.forEach((e) => {
-      const q_id = 'question_id'
-      const a_id = 'answer_id'
-      let answer = {
-        q_id: values[`${e.key}_${q_id}`],
-        a_id: values[`${e.key}_${a_id}`]
-      }
-
-      if(values[`${e.key}_${a_id}`] == '') {
-        blank = true
-      }
-      answers.push(answer)
-    })
 
     // blanks = values.filter((v) => { v === ''})
-    if(blank) {
+    if(isBlank) {
       wx.showToast({
         title: '您有未选择答案的题目，请选择！',
         icon: 'error'
@@ -72,10 +56,11 @@ Page({
       return
     }
 
-    //console.log('journey', journey)
-    journey = {
+    let journey = {
       answers: answers
     }
+
+
     wx.cloud.callFunction({
       name: 'journeys',
       data: { 

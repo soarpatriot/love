@@ -100,40 +100,46 @@ async function findJourneyAnswers(id) {
   const db = cloud.database()
   const _ = db.command
   const result = await db.collection('journeys').doc(id).get()
-  const journeyAnswers = result.data.answers
-  const qIds = journeyAnswers.map((e) => { return e.q_id})
+  const answerIds = result.data.answers
 
-  const r = await db.collection('questions').aggregate()
-  .match({_id: _.in(qIds)})
-  .lookup({
-    from: 'answers',
-    localField: '_id',
-    foreignField: 'question_id',
-    as: 'answers'
-  }).end()
 
-  const questions = yourSelected(journeyAnswers, r.list)
-  const total_score = totalScore(questions)
-  const rs = {
-    questions, questions,
-    total_score: total_score
-  }
-  return JSON.stringify(rs)
+  let r = await db.collection('questions').where({
+    "answers._id": _.in(answerIds)
+  }).get()
+  console.log("r: " + JSON.stringify(r))
+
+  const rr = yourSelected(answerIds, r)
+  // const questions = yourSelected(journeyAnswers, r.list)
+  // const total_score = totalScore(questions)
+  // const rs = {
+  //   questions, questions,
+  //   total_score: total_score
+  // }
+  return JSON.stringify(rr)
 }
 
-function yourSelected(journeyAnswers, questionAnswers){
-  return questionAnswers.map((e) => {
-    const journey_question = journeyAnswers.find(element => element.q_id == e._id);
-    const found = e.answers.find(element => element._id == journey_question.a_id );
+function yourSelected(answerIds, result){
+  let questions = result.data
+  let totalScore = 0
+  for(let i=0; i< answerIds.length;  i++){
+    let q = questions[i]
+    let a = q.answers.find(element => element._id == answerIds[i] )
+    q.selected = answerIds[i]
+    totalScore = totalScore + itemScore(q.weight, a)
+    console.log(itemScore(q.weight, a))
+  }
 
-    e.selected = found
-    e.selected['full_score'] = 100
-    e.selected['category'] = e.category
-    return e
-  })
+  result = { data: questions, total_score:  totalScore.toFixed(2) }
+  return result
+}
+
+function itemScore(qWeight, answer){
+  return (qWeight * answer.weight / 100)
 }
 
 function totalScore(questions) {
+  //const scores = questions.map((e) => e.selected * e.weight / 100; )
+
   const scores = questions.map((e) => e.selected.weight * e.weight / 100)
   const acc = (accumulator, currentValue) => accumulator + currentValue;
   const snum = scores.reduce(acc)
