@@ -24,6 +24,8 @@ Page({
     }).then(res => {
       const result = JSON.parse(res.result)
       console.log("result:" + JSON.stringify(result))
+     
+
       let allQuestions = []
       utils.categories.forEach((cate) => {
         let ques = result.questions.filter((q) => { 
@@ -38,9 +40,11 @@ Page({
 
       
       //rader data
-      const selected = allQuestions.map((q) => {
-        return q.selected
-      })
+      const selected = result.ploys
+      
+      // allQuestions.map((q) => {
+      //   return q.selected
+      // })
 
       const analysisItems = allQuestions.map((q) => {
         let cateData = utils.categories.find(cate =>  q.category == cate.key)
