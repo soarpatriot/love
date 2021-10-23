@@ -19,7 +19,7 @@
   padding-right: 30rpx;
   display: flex;
   font-size: 32rpx;
-  color: grey;
+  color: rgba(0,0,0,.7);
 }
 .ability {
   width: 80%;
@@ -53,7 +53,7 @@
 
 .question, .answer, .sug {
   font-size: 32rpx;
-  color: gray;
+  color: rgba(0,0,0,.6);
 }
 
 

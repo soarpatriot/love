@@ -3,6 +3,7 @@
 
 
 .section{
+  
   margin-top: 4rpx;
   padding: 15rpx 30rpx 15rpx 30rpx;
   background-color: #fff;
@@ -11,5 +12,9 @@
 .section .list{
   margin-top: 20rpx;
   color: #343A40;
-  font-size: 28rpx;
+  font-size: 32rpx;
+}
+
+.section .list .item {
+  color: rgba(0,0,0,.7)
 }
