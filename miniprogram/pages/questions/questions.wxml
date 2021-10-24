@@ -1,7 +1,7 @@
 
 <view class="container padding-view">
   <view class="title">评估</view>
-  <view class="intro-section">请仔细回忆他/她的言行，选择最符合她/他平时言行相近的选项.</view>
+  <view class="intro-section second-headline">请仔细回忆他/她的言行，选择最符合她/他平时言行相近的选项.</view>
   <loading hidden="{{hidden}}" bindchange="loadingChange">
     加载中...
   </loading>
