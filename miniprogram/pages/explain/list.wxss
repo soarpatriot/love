@@ -18,8 +18,6 @@
 .catetory, .total {
   padding-right: 30rpx;
   display: flex;
-  font-size: 32rpx;
-  color: rgba(0,0,0,.7);
 }
 .ability {
   width: 80%;
@@ -34,6 +32,10 @@
   padding-bottom: 30rpx;
 }
 
+.section {
+  margin-bottom: 20rpx;
+}
+
 .sug-catetory {
   font-size: 32rpx;
   
@@ -41,24 +43,22 @@
 }
 
 .sub-tips {
-  font-size: 32rpx;
-  color: rgb(77, 77, 77);
+
 }
 
 .suggestion-item {
-  text-decoration: green wavy underline;
-  font-size: 32rpx;
-  color: rgb(77, 77, 77);
+  text-decoration: #1A6AC3 wavy underline;
+
 }
 
 .question, .answer, .sug {
-  font-size: 32rpx;
-  color: rgba(0,0,0,.6);
+
+  
 }
 
 
 .sug {
-  color: #00aeef;
+  color: #1A6AC3;
 }
 
 .emotion{

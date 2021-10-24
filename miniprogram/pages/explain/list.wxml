@@ -4,9 +4,9 @@
     <canvas canvas-id="canvas" class="canvas" style="width: 100%; height: 600rpx;background:#fff;;"/>
   </view>
   <view class="analysis">
-    <view class="tips">综合分析</view>
+    <view class="tips second-headline">综合分析</view>
     <view class="total">总分: {{totalScore}}</view>
-    <view class="tips">单项分析</view>
+    <view class="tips second-headline">单项分析</view>
     <view class="comprohesive">
       <view class="desc" wx:key="_id" wx:for="{{analysisItems}}">
         <view class="progress-box">
@@ -16,19 +16,27 @@
       </view>
       
     </view>
-    <view class="tips">分析</view>
+    <view class="tips second-headline">分析</view>
     <view class="suggestion">
       <view class="desc" wx:key="_id" wx:for="{{questions}}">
-        <view class="sug-catetory {{item.category}}">{{item.name}}</view>
-        <view class="sub-tips">问题:</view>
-        <view class="question">{{item.desc}}</view>
-        <view class="sub-tips">回答:</view>
-        <view class="answer">{{item.selected.desc}}</view>
-        <view class="suggestion-item">提示:</view>
-        <view class="sug">{{item.suggestion || item.selected.suggestion}}</view>
+        <view class="section">
+          <view class="sug-catetory {{item.category}}">{{item.name}}</view>
+        </view>
+        
+        <view class="section">
+          <view class="sub-tips second-headline">问题:</view>
+          <view class="question">{{item.desc}}</view>
+        </view>
+        
+        <view class="section">
+          <view class="sub-tips second-headline">回答:</view>
+          <view class="answer">{{item.selected.desc}}</view>
+        </view>
+        <view class="section">
+          <view class="suggestion-item second-headline">提示:</view>
+          <view class="sug">{{item.suggestion || item.selected.suggestion}}</view>
+        </view>
       </view>
-
-     
     </view>
   </view>
 

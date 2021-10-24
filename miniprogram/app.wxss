@@ -19,6 +19,15 @@
   text-align: center;
   background-color: #ffffff;
 }
+
+.second-headline {
+  color:  #202124;
+}
+
+.content-style {
+  color: #4D5156;
+}
+
 button {
   background: initial;
 }
@@ -34,7 +43,7 @@ button::after{
 
 page {
   font-size: 32rpx;
-  color: #353535;
+  color: #4D5156;
   background: #f6f6f6;
   display: flex;
   flex-direction: column;

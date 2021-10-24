@@ -43,15 +43,16 @@ page {
 }
 
 .diaglog {
-  color: #343A40;
-  margin-top: 30rpx;
+
+  margin-top: 32rpx;
   padding: 30rpx 30rpx 60rpx 30rpx;
   font-size: 32rpx;
   background-color: #ffffff;
 }
 
 .diaglog .title {
-  font-size: 32rpx;
+  color: #202124;
+  font-size: 36rpx;
   text-align: center;
 }
 

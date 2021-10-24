@@ -6,7 +6,7 @@
     加载中...
   </loading>
   <form class="question-form" catchsubmit="formSubmit" hidden="{{!hidden}}" catchreset="formReset">
-    <view class="questions" wx:key="_id" wx:for="{{questions}}"> 
+    <view class="questions second-headline" wx:key="_id" wx:for="{{questions}}"> 
       {{index + 1}}. {{item.desc}} 
       
       <radio-group class="radio-group" name="{{item._id}}_answer_id" class="group" bindchange="radioChange">
@@ -14,7 +14,7 @@
             <view class="options-radio">
               <radio value="{{item._id}}"/>
             </view>
-            <view class="options-desc">{{item.desc}}</view>
+            <view class="options-desc content-style">{{item.desc}}</view>
           </label>
       </radio-group>
     </view>
