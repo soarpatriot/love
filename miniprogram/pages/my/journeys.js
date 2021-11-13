@@ -26,7 +26,7 @@ Page({
       const result = JSON.parse(res.result)
       console.log(result)
       this.setData({
-        journeys: result.data,
+        journeys: result.list,
         hidden: true
       })
     })

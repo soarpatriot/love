@@ -14,6 +14,12 @@
 
 .item{
   background-color: #ffffff;
-  padding: 15rpx 15rpx 15rpx 30rpx;
+  padding: 15rpx 30rpx 15rpx 30rpx;
   margin-bottom: 2rpx;
+}
+
+.time-ago{
+  color: gray;
+  text-align: right;
+  font-size: 24rpx;
 }

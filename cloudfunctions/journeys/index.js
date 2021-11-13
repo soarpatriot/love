@@ -1,5 +1,6 @@
 // 云函数入口文件
 const cloud = require('wx-server-sdk')
+const timeago = require('timeago.js')
 
 cloud.init({
   // API 调用都保持和云函数当前所在环境一致
@@ -32,12 +33,23 @@ exports.main = async (event, context) => {
 
 async function my() {
   const db = cloud.database()
+  const $ = db.command.aggregate
   let { OPENID} = cloud.getWXContext()
   console.log("openid: " + OPENID)
-  const result = await db.collection('journeys').where({
-    _openid: OPENID,
-  }).orderBy('created_at', 'desc').get()
+  const result = await db.collection('journeys').aggregate()
+  .match({
+    _openid: OPENID
+  })
+  .sort({
+    created_at: -1
+  })
+  .addFields({
+    ago: timeago.format('$created_at', 'zh_CN')
+  }).end()
   
+  // .where({
+  //   _openid: OPENID,
+  // })
   return JSON.stringify(result)
 }
 

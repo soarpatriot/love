@@ -7,7 +7,11 @@
   <view class="list">
   
     <navigator class="item" class="item" wx:key="_id" wx:for="{{journeys}}" url="/pages/explain/list?journey_id={{item._id}}" hover-class="navigator-hover">
-      {{index + 1}}. {{item.created_at}} 
+      {{index + 1}}. {{item.created_at}}
+      <view class="time-ago">
+        {{item.ago}} 
+      </view>
+      
     </navigator>
       
   </view>
