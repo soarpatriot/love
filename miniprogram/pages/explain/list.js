@@ -13,6 +13,8 @@ Page({
   onShow: function () {
     
   },
+
+  
   onLoad: function (options) {
     const journey_id = options.journey_id
     

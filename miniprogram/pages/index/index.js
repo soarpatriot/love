@@ -39,5 +39,4 @@ Page({
   onShareTimeline: function (res) {
 
   }
-
 })

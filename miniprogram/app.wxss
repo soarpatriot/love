@@ -186,3 +186,8 @@ page {
   left:0;
   right:0;
 }
+
+.my-style-button {
+  color: #FF6670;
+  border: 1px solid #FF6670;
+}

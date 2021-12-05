@@ -77,3 +77,12 @@
 .life {
   color: #6c25be;
 }
+
+.share-app{
+  margin-bottom: 80rpx;
+  padding: 0 30rpx;
+}
+
+.share-image{
+  width: 30rpx;
+}

@@ -27,17 +27,27 @@
           <view class="sub-tips second-headline">问题:</view>
           <view class="question">{{item.desc}}</view>
         </view>
-        
+        <view class="section">
+          <view class="suggestion-item second-headline">问题提示:</view>
+          <view class="sug">{{item.suggestion}}</view>
+        </view>
         <view class="section">
           <view class="sub-tips second-headline">回答:</view>
           <view class="answer">{{item.selected.desc}}</view>
         </view>
         <view class="section">
-          <view class="suggestion-item second-headline">提示:</view>
-          <view class="sug">{{item.suggestion || item.selected.suggestion}}</view>
+          <view class="suggestion-item second-headline">问题分析:</view>
+          <view class="sug">{{ item.selected.suggestion}}</view>
         </view>
       </view>
     </view>
-  </view>
 
+
+  </view>
+  <view class="share-app">
+      <view class="share-tips"><icon class="icon-box-img" type="info" size="36"></icon>分享到群后获取答案详细分享</view>
+      <button class="my-style-button" open-type="share">分享到群
+        <image class="share-image" src="../../images/forward.png" mode="widthFix"></image>
+      </button>
+  </view>
 </view>
