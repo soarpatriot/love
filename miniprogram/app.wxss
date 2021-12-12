@@ -188,6 +188,7 @@ page {
 }
 
 .my-style-button {
+  font-weight: 400;
   color: #FF6670;
   border: 1px solid #FF6670;
 }

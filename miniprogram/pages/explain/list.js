@@ -5,6 +5,7 @@ let utils = require('../../libs/utils.js')
 
 Page({
   data: {
+    hidden: false,
     animationData: {},
     questions: [],
     analysisItems: [],
@@ -14,7 +15,21 @@ Page({
     
   },
 
-  
+  onShareAppMessage: function (res) {
+    console.log("xxxff")
+
+    return {
+      title: '因为爱情之爱有几分',
+      path: '/pages/index/index'
+    }
+  },
+  onShareTimeline: function (res) {
+    return {
+      title: '因为爱情之爱有几分',
+      path: '/pages/index/index'
+    }
+  },
+
   onLoad: function (options) {
     const journey_id = options.journey_id
     
@@ -64,6 +79,9 @@ Page({
       })
 
       this.init(selected, cateData);
+      this.setData({
+        hidden: true
+      })
     })
     .catch(e => {
       console.error('explain list: ', e)
