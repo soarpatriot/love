@@ -15,20 +15,5 @@ App({
       })
     }
 
-    // let tablist = [{
-    //   "text": "对话",
-    //   "iconPath": "/images/home-static.png",
-    //   "selectedIconPath": "/images/home.png"
-    // },
-    // {
-    //   "text": "设置",
-    //   "iconPath": "/images/aui-icon-my-static.png",
-    //   "selectedIconPath": "/images/aui-icon-active.png"
-    // }]
-    // this.globalData = {tablist: tablist}
-  },
-
-  // tabChange: function() {
-  //   console.log('change')
-  // }
+  }
 })

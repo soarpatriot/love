@@ -1,5 +1,3 @@
-//index.js
-const app = getApp()
 
 Page({
   data: {
@@ -11,9 +9,8 @@ Page({
     description: ''
   },
 
-  goToPage: function() {
+  exploring: function() {
     const url = "/pages/questions/questions" 
- 
     wx.navigateTo({
       url: url,
     })
@@ -28,11 +25,11 @@ Page({
       this.setData({
         description: data.list[0].description
       })
-    })
-    .catch(e => {
-      console.error('[云函数] [login] 调用失败', e)
+    }).catch(e => {
+      console.error('[云函数] [lyric] 调用失败', e)
     })
 
+    // if the journey-id exists
     if(options['journey-id']) {
       wx.cloud.callFunction({
         name: 'journeys',
@@ -42,6 +39,8 @@ Page({
       }).then(res => {
         //const result = JSON.parse(res.result)
         console.log("result:" + JSON.stringify(res))
+      }).catch(e => {
+        console.error('[云函数] [journeys.unblock] 调用失败', e)
       })
     }
 

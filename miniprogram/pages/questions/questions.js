@@ -1,8 +1,6 @@
 // miniprogram/pages/questions.js
 let utils = require('../../libs/utils.js')
 
-const app = getApp();
-
 Page({
 
   /**
@@ -16,26 +14,24 @@ Page({
   },
 
   /**
-   * Lifecycle function--Called when page load
+   * fetch the questions from cloud
    */
-  onLoad: function (options) {
+  onLoad: function () {
     wx.cloud.callFunction({
       name: 'questions',
-      data: {},
-      success: res => {
-        const data = JSON.parse(res.result)
-        console.info(data)
-        this.setData({
-          questions: data,
-          hidden: true
-        })
-      },
-      fail: err => {
-        console.error('[云函数] [fetch question] 调用失败', err)
-        this.setData({
-          hidden: true
-        })
-      }
+      data: {} })
+    .then(res => {
+      const data = JSON.parse(res.result)
+      console.info(data)
+      this.setData({
+        questions: data,
+        hidden: true
+      })
+    }).catch(e => {
+      console.error('[云函数] [fetch question] 调用失败', e)
+      this.setData({
+        hidden: true
+      })
     })
   },
 
@@ -43,6 +39,7 @@ Page({
     const formData = e.detail.value
 
     const answers = Object.values(formData)
+    console.log(answers)
     const valueBlank = (element) => element === "";
     const isBlank = answers.some(valueBlank)
     
@@ -67,9 +64,7 @@ Page({
         entity: journey }
     }).then(res => {
       const data = JSON.parse(res.result)
-      console.log('save data: ')
-      console.info(JSON.parse(res.result))
-      
+      //console.info(JSON.parse(res.result))
       const url = "/pages/explain/list?journey_id=" + data._id
       wx.redirectTo({
         url: url,
