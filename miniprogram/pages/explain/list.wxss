@@ -46,10 +46,14 @@
 
 }
 
+.suggestion-under-block {
+  color: #FF6670;
+}
+
 .suggestion-item {
   text-decoration: #1A6AC3 wavy underline;
-
 }
+
 
 .question, .answer, .sug {
 
