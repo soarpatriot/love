@@ -46,7 +46,6 @@ Page({
     const valueBlank = (element) => element === "";
     const isBlank = answers.some(valueBlank)
     
-
     // blanks = values.filter((v) => { v === ''})
     if(isBlank) {
       wx.showToast({
@@ -79,8 +78,5 @@ Page({
     .catch(e => {
       console.error('add journey', e)
     })
-
-
   }
-  
 })

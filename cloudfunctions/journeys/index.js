@@ -17,9 +17,6 @@ exports.main = async (event, context) => {
     case 'addJourney': {
       return addJourney(event.entity)
     }
-    case 'findJourney': {
-      return findJourney(event.id)
-    }
     case 'findJourneyAnswers': {
       return findJourneyAnswers(event.id)
     }
@@ -36,11 +33,12 @@ exports.main = async (event, context) => {
 async function unblock(id) {
   const db = cloud.database()
   const _ = db.command
-  await db.collection('journeys').doc(id).update({
+  const result = await db.collection('journeys').doc(id).update({
     data: {
       unblocked: true
     }
   })
+  return JSON.stringify(result)
 }
 
 async function my() {
@@ -59,9 +57,7 @@ async function my() {
     ago: timeago.format('$created_at', 'zh_CN')
   }).end()
   
-  // .where({
-  //   _openid: OPENID,
-  // })
+
   return JSON.stringify(result)
 }
 
@@ -98,9 +94,9 @@ async function findJourneyAnswers(id) {
 
   const rs = {
     "journey": result.data,
-     "questions": questionsWithSelected,
-     "total_score": total,
-     "ploys": orderedPloys
+    "questions": questionsWithSelected,
+    "total_score": total,
+    "ploys": orderedPloys
   }
   return JSON.stringify(rs)
 }
