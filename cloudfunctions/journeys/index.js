@@ -46,18 +46,16 @@ async function my() {
   const $ = db.command.aggregate
   let { OPENID} = cloud.getWXContext()
   console.log("openid: " + OPENID)
-  const result = await db.collection('journeys').aggregate()
+  let result = await db.collection('journeys').aggregate()
   .match({
     _openid: OPENID
   })
   .sort({
     created_at: -1
-  })
-  .addFields({
-    ago: timeago.format('$created_at', 'zh_CN')
   }).end()
-  
-
+  //console.log(JSON.stringify(result.list))
+  result.list = formatTime(result.list)
+  //console.log(JSON.stringify(result))
   return JSON.stringify(result)
 }
 
@@ -138,4 +136,11 @@ function totalScore(questions) {
   const acc = (accumulator, currentValue) => accumulator + currentValue;
   const snum = scores.reduce(acc)
   return snum.toFixed(2)
+}
+
+function formatTime(list) {
+  return list.map((e) => {
+    e.ago = timeago.format(e.created_at.getTime(), 'zh_CN')
+    return e
+  })
 }
