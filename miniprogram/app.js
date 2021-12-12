@@ -1,6 +1,7 @@
 //app.js
 App({
-  onLaunch: function () {
+  onLaunch: function (options) {
+    console.log(options)
     if (!wx.cloud) {
       console.error('请使用 2.2.3 或以上的基础库以使用云能力')
     } else {
@@ -13,20 +14,21 @@ App({
         traceUser: true,
       })
     }
-    let tablist = [{
-      "text": "对话",
-      "iconPath": "/images/home-static.png",
-      "selectedIconPath": "/images/home.png"
-    },
-    {
-      "text": "设置",
-      "iconPath": "/images/aui-icon-my-static.png",
-      "selectedIconPath": "/images/aui-icon-active.png"
-    }]
-    this.globalData = {tablist: tablist}
+
+    // let tablist = [{
+    //   "text": "对话",
+    //   "iconPath": "/images/home-static.png",
+    //   "selectedIconPath": "/images/home.png"
+    // },
+    // {
+    //   "text": "设置",
+    //   "iconPath": "/images/aui-icon-my-static.png",
+    //   "selectedIconPath": "/images/aui-icon-active.png"
+    // }]
+    // this.globalData = {tablist: tablist}
   },
 
-  tabChange: function() {
-    console.log('change')
-  }
+  // tabChange: function() {
+  //   console.log('change')
+  // }
 })

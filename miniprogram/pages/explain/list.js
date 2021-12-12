@@ -9,7 +9,9 @@ Page({
     animationData: {},
     questions: [],
     analysisItems: [],
-    totalScore: 0
+    journey_id: "",
+    totalScore: 0,
+    journey: null,
   },
   onShow: function () {
     
@@ -20,24 +22,27 @@ Page({
 
     return {
       title: '因为爱情之爱有几分',
-      path: '/pages/index/index'
+      path: `/pages/index/index?journey-id=${this.data.journey_id}`
     }
   },
   onShareTimeline: function (res) {
     return {
       title: '因为爱情之爱有几分',
-      path: '/pages/index/index'
+      path: `/pages/index/index?journey-id=${this.data.journey_id}`
     }
   },
 
   onLoad: function (options) {
-    const journey_id = options.journey_id
+    this.setData({
+      journey_id: options.journey_id,
+    })
+    //const journey_id = options.journey_id
     
     wx.cloud.callFunction({
       name: 'journeys',
       data: {
         action: 'findJourneyAnswers',
-        id: journey_id}
+        id: this.data.journey_id}
     }).then(res => {
       const result = JSON.parse(res.result)
       console.log("result:" + JSON.stringify(result))
@@ -51,6 +56,7 @@ Page({
         allQuestions = allQuestions.concat(ques)
       })
       this.setData({
+        journey: result.journey,
         questions: allQuestions,
         totalScore: result.total_score
       })

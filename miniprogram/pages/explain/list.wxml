@@ -40,7 +40,7 @@
         </view>
         <view class="section">
           <view class="suggestion-item second-headline">问题分析:</view>
-          <view class="sug">{{ item.selected.suggestion}}</view>
+          <view hidden="{{!journey.unblocked}}" class="sug">{{ item.selected.suggestion}}</view>
         </view>
       </view>
     </view>

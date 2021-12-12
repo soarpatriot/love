@@ -20,6 +20,7 @@ Page({
   },
 
   onLoad: async function (options) {
+    console.log(options['journey-id'])
     wx.cloud.callFunction({
       name: 'lyric',
     }).then(res => {
@@ -27,11 +28,23 @@ Page({
       this.setData({
         description: data.list[0].description
       })
-      
     })
     .catch(e => {
       console.error('[云函数] [login] 调用失败', e)
     })
+
+    if(options['journey-id']) {
+      wx.cloud.callFunction({
+        name: 'journeys',
+        data: {
+          action: 'unblock',
+          id: options['journey-id']}
+      }).then(res => {
+        //const result = JSON.parse(res.result)
+        console.log("result:" + JSON.stringify(res))
+      })
+    }
+
   },
   onShareAppMessage: function (res) {
 

@@ -23,6 +23,9 @@ exports.main = async (event, context) => {
     case 'findJourneyAnswers': {
       return findJourneyAnswers(event.id)
     }
+    case 'unblock': {
+      return unblock(event.id)
+    }
     default: {
       return
     }
@@ -30,6 +33,15 @@ exports.main = async (event, context) => {
 
 }
 
+async function unblock(id) {
+  const db = cloud.database()
+  const _ = db.command
+  await db.collection('journeys').doc(id).update({
+    data: {
+      unblocked: true
+    }
+  })
+}
 
 async function my() {
   const db = cloud.database()
@@ -85,6 +97,7 @@ async function findJourneyAnswers(id) {
   const orderedPloys = ployDataOrder(ploys)
 
   const rs = {
+    "journey": result.data,
      "questions": questionsWithSelected,
      "total_score": total,
      "ploys": orderedPloys
