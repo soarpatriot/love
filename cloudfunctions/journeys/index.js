@@ -2,6 +2,15 @@
 const cloud = require('wx-server-sdk')
 const timeago = require('timeago.js')
 
+const loveDict = {
+  lose: '长痛不如短痛',
+  failed: '纠结的过程',
+  normal: '平淡的日子',
+  happy: '确信的小幸福',
+  soul: '灵魂伴侣'
+}
+  
+
 cloud.init({
   // API 调用都保持和云函数当前所在环境一致
   env: cloud.DYNAMIC_CURRENT_ENV
@@ -33,7 +42,12 @@ exports.main = async (event, context) => {
 async function unblock(id) {
   const db = cloud.database()
   const _ = db.command
-  const result = await db.collection('journeys').doc(id).update({
+  let { OPENID} = cloud.getWXContext()
+
+  const result = db.collection('journeys').where({
+    _openid: _.neq(OPENID),
+    _id: _.eq(id)
+  }).update({
     data: {
       unblocked: true
     }
@@ -44,8 +58,8 @@ async function unblock(id) {
 async function my() {
   const db = cloud.database()
   const $ = db.command.aggregate
+  const _ = db.command
   let { OPENID} = cloud.getWXContext()
-  console.log("openid: " + OPENID)
   let result = await db.collection('journeys').aggregate()
   .match({
     _openid: OPENID
@@ -55,6 +69,15 @@ async function my() {
   }).end()
   //console.log(JSON.stringify(result.list))
   result.list = formatTime(result.list)
+
+  //const answerIds = connectAnswers(result.list)
+
+
+
+  //const aList = connectAnswers(r.list)
+
+
+  result.list = await addSummary(result.list)
   //console.log(JSON.stringify(result))
   return JSON.stringify(result)
 }
@@ -62,13 +85,13 @@ async function my() {
 async function addJourney(entity) {
   const db = cloud.database()
   let { OPENID} = cloud.getWXContext()
-  console.log('openid:' + OPENID)
+
   entity._openid = OPENID
   entity.created_at = db.serverDate()
   const j = await db.collection('journeys').add({
     data: entity
   })
-  console.log("journeys: " + j)
+  
   return JSON.stringify(j)
 }
 
@@ -143,4 +166,104 @@ function formatTime(list) {
     e.ago = timeago.format(e.created_at.getTime(), 'zh_CN')
     return e
   })
+}
+
+
+
+async function addSummary(journeys) {
+  //const answerIds = connectAnswers(journeys)
+  let ansResult = null;
+  for(let i=0; i < journeys.length; i++ ) {
+    ansResult = await journeyAnswers(journeys[i].answers)
+    let ansObjArr = ansResult.list.pop()
+    let loveAnswer = ansObjArr.answers.pop()
+    //console.log(ansObjArr.answers.pop())
+    let summary = loveMapping(loveAnswer.weight)
+    console.log(loveAnswer.weight)
+    console.log(summary)
+
+    journeys[i].summary = summary
+  }
+
+  // let jours = journeys.forEach((j) => {
+  //   let ansResult = await journeyAnswers(j.answers)
+  //   j.answer = ansResult.list.answers[0]
+  //   return j
+  // })
+
+  //const ansResult = await journeyAnswers(answerIds)
+
+  console.log("jours: ")
+  console.log(journeys)
+  // jours = journeys.map((j) => {
+  //   j.love = cross(j.answers, ansResult.list)
+  //   return j
+  // })
+
+  return journeys;
+}
+
+function cross(answerIds, answers) {
+   let a = answers.filter(x => answerIds.some(y => y === x._id))
+   console.log(a)
+   return a[0]
+}
+
+function connectAnswers(list) {
+  let as = []
+  list.forEach(a => {
+    as = as.concat(a.answers)
+  })
+
+  return as
+}
+
+async function journeyAnswers(answerIds) {
+  const db = cloud.database()
+  const $ = db.command.aggregate
+  const _ = db.command
+  const r = await db.collection('questions').aggregate()
+    .match({
+      category: _.eq('love'),
+      answers: _.elemMatch({
+        _id: _.in(answerIds)
+      })
+    }).project({
+      answers: $.filter({
+        input: '$answers',
+        as: 'item',
+        cond: $.in(['$$item._id', answerIds])
+      })
+    })
+    .end()
+
+    return r
+}
+
+
+function loveMapping(score) {
+  let s = ''
+  switch (true) {
+    case score >= 85: {
+      s = loveDict['soul']
+      break
+    }
+    case score >= 75:  {
+      s = loveDict['happy']
+      break
+    }
+    case score >= 60:  {
+      s = loveDict['normal']
+      break
+    }
+    case score >= 50:  {
+      s = loveDict['failed']
+      break
+    }
+    default:  {
+      s = loveDict['lose']
+      break
+    }
+  }
+  return s
 }
