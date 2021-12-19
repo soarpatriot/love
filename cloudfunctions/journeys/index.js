@@ -177,46 +177,28 @@ async function addSummary(journeys) {
     ansResult = await journeyAnswers(journeys[i].answers)
     let ansObjArr = ansResult.list.pop()
     let loveAnswer = ansObjArr.answers.pop()
-    //console.log(ansObjArr.answers.pop())
     let summary = loveMapping(loveAnswer.weight)
-    console.log(loveAnswer.weight)
-    console.log(summary)
 
     journeys[i].summary = summary
   }
 
-  // let jours = journeys.forEach((j) => {
-  //   let ansResult = await journeyAnswers(j.answers)
-  //   j.answer = ansResult.list.answers[0]
-  //   return j
-  // })
-
-  //const ansResult = await journeyAnswers(answerIds)
-
-  console.log("jours: ")
-  console.log(journeys)
-  // jours = journeys.map((j) => {
-  //   j.love = cross(j.answers, ansResult.list)
-  //   return j
-  // })
-
   return journeys;
 }
 
-function cross(answerIds, answers) {
-   let a = answers.filter(x => answerIds.some(y => y === x._id))
-   console.log(a)
-   return a[0]
-}
+// function cross(answerIds, answers) {
+//    let a = answers.filter(x => answerIds.some(y => y === x._id))
+//    console.log(a)
+//    return a[0]
+// }
 
-function connectAnswers(list) {
-  let as = []
-  list.forEach(a => {
-    as = as.concat(a.answers)
-  })
+// function connectAnswers(list) {
+//   let as = []
+//   list.forEach(a => {
+//     as = as.concat(a.answers)
+//   })
 
-  return as
-}
+//   return as
+// }
 
 async function journeyAnswers(answerIds) {
   const db = cloud.database()

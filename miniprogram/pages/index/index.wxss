@@ -16,7 +16,7 @@ page {
 
 
 .heart{
-  padding: 40rpx;
+  padding: 30rpx;
   background-color: #ffffff;
   display: flex;
   flex-direction:column;
@@ -44,8 +44,8 @@ page {
 
 .diaglog {
 
-  margin-top: 32rpx;
-  padding: 30rpx 30rpx 60rpx 30rpx;
+  margin-top: 20rpx;
+  padding: 30rpx 30rpx 30rpx 30rpx;
   font-size: 32rpx;
   background-color: #ffffff;
 }
