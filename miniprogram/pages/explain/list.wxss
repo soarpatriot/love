@@ -72,11 +72,11 @@
 }
 
 
-.question, .answer, .sug {
-
-  
+.test-result {
+  padding: 0 30rpx;
+  font-size: 28rpx;
+  color: #7A7E83;
 }
-
 
 .sug {
   color: #1A6AC3;
@@ -102,7 +102,7 @@
 .share-app{
   background-color: #ffffff;
 
-  padding: 60rpx 30rpx;
+  padding: 30rpx 30rpx 60rpx 30rpx;
 }
 
 .share-image{

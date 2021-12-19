@@ -62,12 +62,18 @@
     </view>
 
   </view>
+
   <view hidden="{{journey.unblocked}}" class="share-app">
+      <view class="test-result">
+        测试可稍后从 我的  -> 我的旅程 查看
+      </view>
       <view class="share-tips">
-        <icon class="icon-box-img" type="info" size="34"></icon>分享到群或好友，并邀请用户点击后解锁详细分析
+        <icon class="icon-box-img" type="info" size="34"></icon>分享到群或好友，并邀请好友点击后解锁详细分析
         <button class="my-style-button" open-type="share">分享
             <image class="share-image" src="../../images/forward.png" mode="widthFix"></image>
         </button>
       </view>
+
   </view>
+
 </view>

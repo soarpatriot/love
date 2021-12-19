@@ -8,6 +8,7 @@ Page({
    * Page initial data
    */
   data: {
+    hidden: false,
     questions: []
   },
 

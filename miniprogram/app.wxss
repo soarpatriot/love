@@ -15,7 +15,7 @@
 
 .title {
   padding: 20rpx 0;
-  font-size: 48rpx;
+  font-size: 36rpx;
   text-align: center;
   background-color: #ffffff;
 }

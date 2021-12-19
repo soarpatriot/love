@@ -1,6 +1,8 @@
 <!--miniprogram/pages/my/journeys.wxml-->
 
-
+<loading hidden="{{hidden}}" bindchange="loadingChange">
+    加载中...
+</loading>
 <view class="container padding-view">
   <text class="title">我的旅程</text>
 

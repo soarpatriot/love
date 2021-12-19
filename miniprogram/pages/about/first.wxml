@@ -68,6 +68,9 @@
       <view class="item">
         6. 贫穷的本质
       </view>
+      <view class="item">
+        7. ...
+      </view>
     </view>
   </view>
 
@@ -77,19 +80,19 @@
     </view>
     <view class="list">
       <view class="item">
-        1. 基本
+        1. 爱
       </view>
       <view class="item">
-        2. 相处
+        2. 情绪
       </view>
       <view class="item">
-        3. 家庭
+        3. 潜力
       </view>
       <view class="item">
-        4. 人品
+        4. 世界观
       </view>
       <view class="item">
-        5. 世界观
+        5. 生活
       </view>
     </view>
   </view>
