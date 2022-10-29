@@ -58,6 +58,7 @@ page {
 
 .btn-area {
   padding-top: 60rpx;
+  margin-bottom: 120rpx;
 }
 .desc-text {
   font-size: medium;
