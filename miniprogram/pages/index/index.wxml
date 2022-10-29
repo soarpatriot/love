@@ -8,7 +8,7 @@
       爱有几分
     </view>
     <view>
-       爱于不爱，谁又能说的清楚，爱有几分，谁谁又能说的明白，一起探索她/他对你的爱有几分：
+       爱与不爱，谁又能说的清楚，爱有几分，谁又能说的明白，一起探索她/他对你的爱有几分：
     </view>
     <view class="btn-area">
       <button class="my-style-button" bindtap="exploring">开始探索</button>
