@@ -45,7 +45,7 @@ Page({
         id: this.data.journey_id}
     }).then(res => {
       const result = JSON.parse(res.result)
-      console.log("result:" + JSON.stringify(result))
+      //console.log("result:" + JSON.stringify(result))
      
 
       let allQuestions = []
@@ -131,6 +131,7 @@ Page({
     //绘制文字
     const systemInfo = wx.getSystemInfoSync()
     const windowWidth = systemInfo.windowWidth
+    console.log(JSON.stringify(mData))
     ploy.drawText(ctx, this.getRatio(), lCoordinates, cateData, 32 / ploy.getRatio(windowWidth));
     ploy.drawRadar(ctx, mData, L_RADIUS, -rotateAngle);
     ctx.draw();

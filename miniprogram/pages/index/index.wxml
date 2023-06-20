@@ -5,10 +5,16 @@
   </view>
   <view class="diaglog">
     <view class="title">
-      爱有几分
+      因为爱情
     </view>
-    <view>
-       爱与不爱，谁又能说的清楚，爱有几分，谁又能说的明白，一起探索她/他对你的爱有几分：
+    <view class="content-style">
+      爱情是生命中最美妙、最深刻的体验之一，它赋予了生活以意义和美好，它要求我们付出真挚的关怀、尊重和包容。通过爱情，我们能够感知到自己的存在和生命的意义，找到归属感和满足感。
+    </view>
+    <view class="title">
+      探索
+    </view>
+    <view class="content-style">
+      寻找美好爱情的道路可能会面临一些困难，但这些挑战也是成长和学习的机会。让我们通过如下问题一起探索她/他的爱情生活观，也是更好地了解自己，发展更健康、成熟的爱情观，世界观，最终找到持久而美好的爱情旅程。
     </view>
     <view class="btn-area">
       <button class="my-style-button" bindtap="exploring">开始探索</button>
