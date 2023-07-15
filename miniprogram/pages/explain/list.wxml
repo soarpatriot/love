@@ -64,6 +64,13 @@
   </view>
 
   <view hidden="{{journey.unblocked}}" class="share-app">
+    9.9 元查看详细分析
+    <button class="my-style-button" bindtap="onPaying">支付
+      <image class="share-image" src="../../images/forward.png" mode="widthFix"></image>
+    </button>
+  </view>
+
+  <view hidden="{{journey.unblocked}}" class="share-app">
       <view class="test-result">
         测试可稍后从 我的  -> 我的旅程 查看
       </view>

@@ -38,9 +38,9 @@
     "showES6CompileOption": false,
     "useCompilerPlugins": false
   },
-  "appid": "wxbdb60fc6d649ba92",
+  "appid": "wxd1c163152dc7d457",
   "projectname": "love",
-  "libVersion": "2.18.0",
+  "libVersion": "2.32.3",
   "simulatorType": "wechat",
   "simulatorPluginLibVersion": {},
   "cloudfunctionTemplateRoot": "cloudfunctionTemplate/",
