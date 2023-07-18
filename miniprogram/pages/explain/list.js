@@ -97,14 +97,16 @@ Page({
 
   onPaying: async function(options) {
     console.log('xx')
+    
     const id = this.data.journey_id
     const that = this
+  
     wx.cloud.callFunction({
       name: 'pay',
       data: {
-        // ...
+        journeyId: id
       },
-  
+
       success: res => {
         const payment = res.result.payment
         console.log(res)

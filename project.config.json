@@ -36,7 +36,8 @@
     "disableUseStrict": false,
     "minifyWXML": true,
     "showES6CompileOption": false,
-    "useCompilerPlugins": false
+    "useCompilerPlugins": false,
+    "condition": false
   },
   "appid": "wxd1c163152dc7d457",
   "projectname": "love",
