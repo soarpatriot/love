@@ -1,7 +1,7 @@
 /* miniprogram/pages/explain/list.wxss */
 
 .analysis {
-  padding-bottom: 40rpx;
+  
 }
 
 .icon-box{
@@ -117,7 +117,7 @@
 
 .share-app{
   background-color: #ffffff;
-  padding: 30rpx 30rpx 90rpx 30rpx;
+  padding: 15rpx 30rpx 90rpx 30rpx;
 }
 
 .share-image{
