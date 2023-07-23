@@ -22,7 +22,7 @@ Page({
       data: {} })
     .then(res => {
       const data = JSON.parse(res.result)
-      console.info(data)
+      
       this.setData({
         questions: data,
         hidden: true
