@@ -14,7 +14,7 @@
       探索--缘来如此
     </view>
     <view class="content-style">
-      寻找美好爱情的道路可能会面临一些困难，让我们通过如下问题一起探索她/他的爱情生活观，也是更好地了解自己，发展更健康、成熟的爱情观，世界观，最终找到持久而美好的爱情旅程。
+      让我们通过如下问题一起探索她/他的爱情生活观，也是更好地了解自己，发展更健康、成熟的爱情观，世界观，最终找到持久而美好的爱情旅程。
     </view>
     <view class="btn-area">
       <button class="my-style-button" bindtap="exploring">开始探索</button>
