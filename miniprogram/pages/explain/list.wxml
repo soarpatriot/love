@@ -63,6 +63,24 @@
 
   </view>
 
+
+
+  <view hidden="{{journey.unblocked}}" class="share-app">
+    <view class="pay-section">
+      <view class="icon-box">
+        <view class="icon-small-wrp">
+          <icon class="icon-small" type="info_circle" size="26"></icon>
+        </view>
+        <view class="icon-box-ctn">
+          <view class="icon-box-desc">9.9元解锁详细分析</view>
+        </view>
+      </view>
+    </view>
+    
+     <button class="" type="primary" bindtap="onPaying">立即支付</button>
+  </view>
+
+  <!--
   <view hidden="{{journey.unblocked}}" class="share-app">
       <view class="test-result">
         测试可稍后从 我的  -> 我的旅程 查看
@@ -75,5 +93,7 @@
       </view>
 
   </view>
+  -->
+
 
 </view>

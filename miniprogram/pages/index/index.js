@@ -18,18 +18,18 @@ Page({
 
   onLoad: async function (options) {
     console.log(options['journey-id'])
-    wx.cloud.callFunction({
-      name: 'lyric',
-    }).then(res => {
-      const data = JSON.parse(res.result)
-      this.setData({
-        description: data.list[0].description
-      })
-    }).catch(e => {
-      console.error('[云函数] [lyric] 调用失败', e)
-    })
-
+    // wx.cloud.callFunction({
+    //   name: 'lyric',
+    // }).then(res => {
+    //   const data = JSON.parse(res.result)
+    //   this.setData({
+    //     description: data.list[0].description
+    //   })
+    // }).catch(e => {
+    //   console.error('[云函数] [lyric] 调用失败', e)
+    // })
     // if the journey-id exists
+
     if(options['journey-id']) {
       wx.cloud.callFunction({
         name: 'journeys',

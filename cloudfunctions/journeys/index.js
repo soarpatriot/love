@@ -45,7 +45,7 @@ async function unblock(id) {
   let { OPENID} = cloud.getWXContext()
 
   const result = db.collection('journeys').where({
-    _openid: _.neq(OPENID),
+    _openid: _.eq(OPENID),
     _id: _.eq(id)
   }).update({
     data: {

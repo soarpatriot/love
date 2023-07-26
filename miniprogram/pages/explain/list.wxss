@@ -1,8 +1,21 @@
 /* miniprogram/pages/explain/list.wxss */
 
-.analysis {
-  
+
+.icon-box{
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 10rpx;
 }
+
+.icon-box-desc{
+  color: #FF6670;
+  font-size: 30rpx;
+}
+
+.icon-box-ctn{
+  padding: 0 10rpx;
+}
+
 .ana-title {
   font-size: 36rpx;
   padding: 30rpx 30rpx;
@@ -59,9 +72,7 @@
   color: rgb(46, 46, 46);
 }
 
-.sub-tips {
 
-}
 
 .suggestion-under-block {
   color: #FF6670;
@@ -101,8 +112,7 @@
 
 .share-app{
   background-color: #ffffff;
-
-  padding: 30rpx 30rpx 60rpx 30rpx;
+  padding: 15rpx 30rpx 90rpx 30rpx;
 }
 
 .share-image{

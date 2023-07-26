@@ -45,7 +45,7 @@ Page({
         id: this.data.journey_id}
     }).then(res => {
       const result = JSON.parse(res.result)
-      console.log("result:" + JSON.stringify(result))
+      //console.log("result:" + JSON.stringify(result))
      
 
       let allQuestions = []
@@ -94,6 +94,58 @@ Page({
     })
   
   },
+
+  onPaying: async function(options) {
+    console.log('xx')
+    
+    const id = this.data.journey_id
+    const that = this
+  
+    wx.cloud.callFunction({
+      name: 'pay',
+      data: {
+        journeyId: id
+      },
+
+      success: res => {
+        const payment = res.result.payment
+        console.log(res)
+        wx.requestPayment({
+          ...payment,
+          success (res) {
+            console.log('pay success', res)
+            that.blockJourney(id)
+          },
+          fail (err) {
+            console.error('pay fail', err)
+          }
+        })
+      },
+      fail: console.error,
+    })
+    // const openid = res.result.openid
+    // console.log(res.result.openid)
+
+    // const { appId } = wx.getAccountInfoSync().miniProgram;
+    // const mchid = '1648066848'
+    // console.log(appId)
+    // const payInfo = {
+    //   "mchid": mchid,
+    //   "out_trade_no": "1217752501201407033233368318",
+    //   "appid": appId,
+    //   "description": "详细分析",
+    //   "notify_url": "https://www.weixin.qq.com/wxpay/pay.php",
+    //   "amount": {
+    //     "total": 1,
+    //     "currency": "CNY"
+    //   },
+    //   "payer": {
+    //     "openid": openid
+    //   }
+    // }
+
+    
+  },
  
   getRatio() {
     let systemInfo = wx.getSystemInfoSync();
@@ -131,8 +183,25 @@ Page({
     //绘制文字
     const systemInfo = wx.getSystemInfoSync()
     const windowWidth = systemInfo.windowWidth
+    console.log(JSON.stringify(mData))
     ploy.drawText(ctx, this.getRatio(), lCoordinates, cateData, 32 / ploy.getRatio(windowWidth));
     ploy.drawRadar(ctx, mData, L_RADIUS, -rotateAngle);
     ctx.draw();
+  },
+
+  blockJourney(id) {
+    wx.cloud.callFunction({
+      name: 'journeys',
+      data: { 
+        action: 'unblock',
+        id: id }
+    }).then(res => {
+      const data = JSON.parse(res.result)
+      //console.info(JSON.parse(res.result))
+      const url = "/pages/explain/list?journey_id=" + id
+      wx.redirectTo({
+        url: url,
+      })
+    })
   }
 })

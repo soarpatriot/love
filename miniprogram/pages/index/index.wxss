@@ -51,13 +51,16 @@ page {
 }
 
 .diaglog .title {
-  color: #202124;
+  color: #FF6670;
   font-size: 36rpx;
   text-align: center;
 }
-
+.diaglog .content {
+  padding-top: 60rpx;
+}
 .btn-area {
   padding-top: 60rpx;
+  margin-bottom: 120rpx;
 }
 .desc-text {
   font-size: medium;

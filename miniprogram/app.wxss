@@ -1,4 +1,9 @@
 /**app.wxss**/
+
+icon {
+  vertical-align: middle;
+}
+
 .container {
   display: flex;
   flex-direction: column;
