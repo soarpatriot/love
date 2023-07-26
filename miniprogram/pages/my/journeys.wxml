@@ -10,17 +10,14 @@
   
     <navigator class="item" class="item" wx:key="_id" wx:for="{{journeys}}" url="/pages/explain/list?journey_id={{item._id}}" hover-class="navigator-hover">
       <view class="content-desc">
+        <view>{{index + 1}}. {{item.summary}}</view>
         <view>
-          {{index + 1}}. {{item.summary}}
-        </view>
-        <view>
-          <block wx:if="{{item.unblocked}}">
-            <image class="image-lock" src="../../images/unlock.png" mode=""></image>
+          <block wx:if="{{item.unblocked}}" >
+            <image class="image-lock" src="../../images/unlock.png"/>
           </block>
-          <block wx:else>
-            <image class="image-lock" src="../../images/lock.png" mode=""></image>
+          <block wx:else >
+            <image class="image-lock" src="../../images/lock.png"/>
           </block>
-         
         </view>
       </view>
 

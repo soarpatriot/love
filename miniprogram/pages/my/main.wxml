@@ -1,22 +1,10 @@
-<!--miniprogram/pages/my/main.wxml-->
-
-
-<view class="container padding-view">
+<view class="container">
   <view class="my-intro">
-    <view class="avatar">
-      <open-data type="userAvatarUrl"></open-data>
-    </view>
-    <view class="nick-name">
-      <open-data type="userNickName"></open-data>
-    </view>
-    
+    <view class="avatar"><open-data type="userAvatarUrl"></open-data></view>
+    <view class="nick-name"><open-data type="userNickName"></open-data></view>  
   </view>
-  
-  <navigator class="item" url="/pages/my/journeys?title=navigate" hover-class="navigator-hover">我的旅程</navigator>
-  <navigator class="item" url="/pages/about/first?title=navigate" hover-class="navigator-hover">关于</navigator>
-
-  <!--
-  <navigator class="item" url="/pages/explain/pay?title=navigate" hover-class="navigator-hover">支付</navigator>
-  -->
-
+  <view class="actions">
+    <navigator class="item" url="/pages/my/journeys?title=navigate" hover-class="navigator-hover">我的旅程</navigator>
+    <navigator class="item" url="/pages/about/first?title=navigate" hover-class="navigator-hover">关于</navigator>
+  </view>
 </view>
