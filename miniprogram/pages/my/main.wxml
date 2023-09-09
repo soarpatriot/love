@@ -6,5 +6,6 @@
   <view class="actions">
     <navigator class="item" url="/pages/my/journeys?title=navigate" hover-class="navigator-hover">我的旅程</navigator>
     <navigator class="item" url="/pages/about/first?title=navigate" hover-class="navigator-hover">关于</navigator>
+    <button class="item feedback" size='large' open-type='feedback'>意见反馈</button>
   </view>
 </view>

@@ -16,11 +16,16 @@
   background-color: #ffffff;
 }
 
-.actions{
-  
-  
+.actions button{
+  width: 100%;
+  color: #4D5156;
 }
 
+.feedback{
+  font-weight: 400;
+  font-size: 32rpx;
+  text-align: left;
+}
 .item{
 
   padding: 30rpx 0 30rpx 30rpx;
